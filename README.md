@@ -1,3 +1,5 @@
+# ormi-dev-project-1
+
 - 목표 :
 
   1. 이번 프로젝트는 인공지능을 API로 다뤄보는 경험 +
@@ -45,4 +47,4 @@
   - 쇼핑몰 쳇봇(http://test.api.weniv.co.kr/mall + ChatGPT(미리 데이터를 전송해서 대답이 가능하게 해야 합니다.)),
   - 맛집 찾기(접속했을 때 location ip를 기준으로 '동'정도까지 알아낸다음 질문) => 적절하지 않을 것 같습니다.
   - sample : https://devport.swygbro.com/
-# ormi-dev-project-1
+
