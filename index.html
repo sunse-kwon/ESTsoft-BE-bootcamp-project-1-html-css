@@ -93,7 +93,7 @@
 
 
         
-        baseurl = "https://test.api.weniv.co.kr"
+        
 
         # communication
 
@@ -101,7 +101,8 @@
             baseurl = "https://estsoft-openai-api.jejucodingcamp.workers.dev"
             
             headers = {"Content-type": "application/json"}
-            body = json.dumps(d)
+            body = json.dumps([{"role": "system",
+            "content": "assistant is tourism professional for Singapore"},])
 
             response = await request(f"{baseurl}/", body=body, method="POST", headers=headers)
 
