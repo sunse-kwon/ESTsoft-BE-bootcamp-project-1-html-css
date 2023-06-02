@@ -71,8 +71,7 @@
         input = document.querySelector("input");
         button = document.querySelector("button");
 
-        print(d)
-        print(type(d))
+
 
         
 
@@ -84,7 +83,7 @@
             d.append({
                 "role": "user",
                 "content": userInputData,})
-            chatGptAPI(d)
+            
             
         eventPush = create_proxy(eventPushData)
         button.addEventListener("click", eventPush);
@@ -96,14 +95,18 @@
         # communication
 
         async def main():
-            baseurl = "https://estsoft-openai-api.jejucodingcamp.workers.dev"
+            baseurl = "https://estsoft-openai-api.jejucodingcamp.workers.dev/"
+
             headers = {"Content-type": "application/json"}
-            body = json.dumps(d)
-            new_post = await request(f"{baseurl}/posts", body=body, method="POST", headers=headers)
+            body = json.dumps(url)
+            response = await request(f"{baseurl}", body=body, method="POST", headers=headers)
             
 
             data = await response.json()
-            createCard(data)
+            for i in data:
+                print(i)
+            
+            
 
         asyncio.ensure_future(main())
 
