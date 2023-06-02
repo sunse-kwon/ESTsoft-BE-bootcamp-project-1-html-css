@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>chat</title>
+
+
+    <link rel="icon" type="image/png" href="favicon.png" />
 
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
@@ -90,23 +93,22 @@
 
 
         
-
+        baseurl = "https://test.api.weniv.co.kr"
 
         # communication
 
         async def main():
-            baseurl = "https://estsoft-openai-api.jejucodingcamp.workers.dev/"
-
-            headers = {"Content-type": "application/json"}
-            body = json.dumps(url)
-            response = await request(f"{baseurl}", body=body, method="POST", headers=headers)
+            baseurl = "https://estsoft-openai-api.jejucodingcamp.workers.dev"
             
+            headers = {"Content-type": "application/json"}
+            body = json.dumps(d)
+
+            response = await request(f"{baseurl}/", body=body, method="POST", headers=headers)
+
 
             data = await response.json()
-            for i in data:
-                print(i)
-            
-            
+            print(data)
+            createCard(data)
 
         asyncio.ensure_future(main())
 
