@@ -22,9 +22,6 @@
 </head>
 
 <body>
-    <div id="test">
-
-    </div>
 
     <div>
         <form>
@@ -52,6 +49,11 @@
         url = (
             "https://raw.githubusercontent.com/sunse523/ormi-dev-project-1/master/py/TOURISM.csv"
             )
+
+        baseurl = "https://estsoft-openai-api.jejucodingcamp.workers.dev"    
+
+
+        #pre-processing of dataset to create bunddle 
         data = pd.read_csv(open_url(url), sep=',', encoding= 'unicode_escape')
         data["TIME"] = 60
         new_data = data.loc[:,["OBJECTID","PAGETITLE","OVERVIEW", "IMAGE_PATH", 'LATITUDE', 'LONGTITUDE',"ADDRESS","OPENING_HO","TIME"]]
@@ -64,30 +66,29 @@
         ref = json.dumps(reference)
 
         
+        # pre-training with bundled dataset
+        data = [
+        {"role": "system","content": "assistant is tourism professional for Singapore"},
+        {"role": "assistant", "content": f'this is bundled data of attractions based on provided raw dataset. each bunddle has at least 2 to 5 attractions in it. assistant will answer based on this data :{ref}'},
+        ]
 
-        d = [{"role": "system",
-        "content": "assistant is tourism professional for Singapore"},]
-        
-        d.append({"role": "assistant",
-        "content": reference})
 
         input = document.querySelector("input");
         button = document.querySelector("button");
 
-
-
-        
-
+        #callback function as an input of addEventListner
         def eventPushData(e):
             e.preventDefault();
             userInputData = input.value;
             input.value = "";
 
-            d.append({
+            data.append({
                 "role": "user",
-                "content": userInputData,})
+                "content": userInputData})
             
-            
+            asyncio.ensure_future(main())
+        
+        
         eventPush = create_proxy(eventPushData)
         button.addEventListener("click", eventPush);
 
@@ -95,23 +96,15 @@
         
         
 
-        # communication
-
+        # chatGPT API communication
         async def main():
-            baseurl = "https://estsoft-openai-api.jejucodingcamp.workers.dev"
-            
             headers = {"Content-type": "application/json"}
-            body = json.dumps([{"role": "system",
-            "content": "assistant is tourism professional for Singapore"},])
-
+            body = json.dumps(data)
             response = await request(f"{baseurl}/", body=body, method="POST", headers=headers)
+            res = await response.json()
+            document.querySelector('#contents').innerText = res["choices"][0]["message"]
 
-
-            data = await response.json()
-            print(data)
-            createCard(data)
-
-        asyncio.ensure_future(main())
+        
 
     </py-script>
 
