@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>chat</title>
+    <title>new chat</title>
 
 
     <link rel="icon" type="image/png" href="favicon.png" />
@@ -24,14 +24,13 @@
 <body>
 
     <div>
+        <ul></ul>
         <form>
         <input type="text" />
         <button id="'button" type="submit">전송</button>
         </form>
         <div id="contents"></div>
     </div>
-
-
 
 
     <py-script>
@@ -75,25 +74,49 @@
 
         input = document.querySelector("input");
         button = document.querySelector("button");
+        chatList = document.querySelector("ul");
+
+
+        # 화면에 뿌려줄 데이터, 질문들
+        questionData = []
+
+
+        # 화면에 질문 그려주는 함수
+        def printQuestion():
+            li = document.createElement("li")
+            li.classList.add("question")
+            for el in questionData:
+                li.innerText = el["content"]
+                chatList.appendChild(li)
+            questionData.clear()
+
 
         #callback function as an input of addEventListner
         def eventPushData(e):
             e.preventDefault();
             userInputData = input.value;
             input.value = "";
-
             data.append({
                 "role": "user",
                 "content": userInputData})
-            
+            questionData.append({
+                "role": "user",
+                "content": userInputData})
+            print(questionData)
+            printQuestion()  
             asyncio.ensure_future(main())
-        
-        
+            
+
         eventPush = create_proxy(eventPushData)
         button.addEventListener("click", eventPush);
 
 
-        
+        # 화면에 답변 그려주는 함수
+        def printAnswer(answer):
+            li = document.createElement("li")
+            li.classList.add("answer")
+            li.innerText = answer
+            chatList.appendChild(li)        
         
 
         # chatGPT API communication
@@ -102,18 +125,9 @@
             body = json.dumps(data)
             response = await request(f"{baseurl}/", body=body, method="POST", headers=headers)
             res = await response.json()
-            document.querySelector('#contents').innerText = res["choices"][0]["message"]
-
-        
+            printAnswer(res["choices"][0]["message"])
 
     </py-script>
-
- 
-    
-    
-    
-    <!-- <script src="./js/chat.js"></script> -->
-
 
 
 </body>
