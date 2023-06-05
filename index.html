@@ -24,24 +24,32 @@
 </head>
 
 <body>
+    <header></header>
 
-    <div class="main">
+    <main>
         <h2 class="main-title">채팅</h2>
         <p class="main-desc">채팅 페이지입니다.</p>
 
         <div class="chat-wrap">
             <p class="chat-info">chatGPT에게 질문을 해보세요!</p>
-            <div class="chat=screen">
+            <div class="chat-screen">
                 <ul></ul>
             </div>
             
             <form class="chat-form">
             <input type="text" />
             <button id="'button" type="submit">전송</button>
+            <button type="reset"> 지우기</button>
             </form>
-            
         </div>
-    </div>
+
+    </main>
+
+    <footer></footer>
+
+    
+   
+    
 
 
     <py-script>
@@ -65,10 +73,13 @@
 
         #pre-processing of dataset to create bunddle 
         rawData = pd.read_csv(open_url(url), sep=',', encoding= 'unicode_escape')
+        # expected time spend created and assigned 60 minute to all temporarily
         rawData["TIME"] = 60
         new_data = rawData.loc[:,["OBJECTID","PAGETITLE","OVERVIEW", "IMAGE_PATH", 'LATITUDE', 'LONGTITUDE',"ADDRESS","OPENING_HO","TIME"]]
-        new_data = new_data.loc[:,["OBJECTID", "LATITUDE", "LONGTITUDE", "TIME"]]
 
+
+
+        new_data = new_data.loc[:,["OBJECTID", "LATITUDE", "LONGTITUDE", "TIME"]]
         new_data = new_data.values
         reference = bundling(new_data)
         
@@ -85,8 +96,8 @@
         ]
 
 
-        input = document.querySelector("input");
-        button = document.querySelector("button");
+        inputChat = document.querySelector("input");
+        buttonChat = document.querySelector("button");
         chatList = document.querySelector("ul");
 
 
@@ -99,7 +110,7 @@
             li = document.createElement("li")
             li.classList.add("question")
             for el in questionData:
-                li.innerText = el["content"]
+                li.innerHTML = f'<div class="divQuestion">나 : {el["content"]}</div>'
                 chatList.appendChild(li)
             questionData.clear()
 
@@ -107,8 +118,8 @@
         #callback function
         def eventPushData(e):
             e.preventDefault();
-            userInputData = input.value;
-            input.value = "";
+            userInputData = inputChat.value;
+            inputChat.value = "";
             data.append({
                 "role": "user",
                 "content": userInputData})
@@ -121,14 +132,14 @@
             
         # submit
         eventPush = create_proxy(eventPushData)
-        button.addEventListener("click", eventPush);
+        buttonChat.addEventListener("click", eventPush);
 
 
         # 화면에 답변 그려주는 함수
         def printAnswer(answer):
             li = document.createElement("li")
             li.classList.add("answer")
-            li.innerText = answer
+            li.innerHTML = f'<div class="divAnswer"> AI : {answer}</div>'
             chatList.appendChild(li)        
         
 
