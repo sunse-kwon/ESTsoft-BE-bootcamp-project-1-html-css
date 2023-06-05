@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 
+    <link rel="stylesheet" href="./css/chat.css">
+
     <py-config>
         packages = ["numpy","pandas"]
         [[fetch]]
@@ -23,13 +25,22 @@
 
 <body>
 
-    <div>
-        <ul></ul>
-        <form>
-        <input type="text" />
-        <button id="'button" type="submit">전송</button>
-        </form>
-        <div id="contents"></div>
+    <div class="main">
+        <h2 class="main-title">채팅</h2>
+        <p class="main-desc">채팅 페이지입니다.</p>
+
+        <div class="chat-wrap">
+            <p class="chat-info">chatGPT에게 질문을 해보세요!</p>
+            <div class="chat=screen">
+                <ul></ul>
+            </div>
+            
+            <form class="chat-form">
+            <input type="text" />
+            <button id="'button" type="submit">전송</button>
+            </form>
+            
+        </div>
     </div>
 
 
@@ -53,21 +64,23 @@
 
 
         #pre-processing of dataset to create bunddle 
-        data = pd.read_csv(open_url(url), sep=',', encoding= 'unicode_escape')
-        data["TIME"] = 60
-        new_data = data.loc[:,["OBJECTID","PAGETITLE","OVERVIEW", "IMAGE_PATH", 'LATITUDE', 'LONGTITUDE',"ADDRESS","OPENING_HO","TIME"]]
+        rawData = pd.read_csv(open_url(url), sep=',', encoding= 'unicode_escape')
+        rawData["TIME"] = 60
+        new_data = rawData.loc[:,["OBJECTID","PAGETITLE","OVERVIEW", "IMAGE_PATH", 'LATITUDE', 'LONGTITUDE',"ADDRESS","OPENING_HO","TIME"]]
         new_data = new_data.loc[:,["OBJECTID", "LATITUDE", "LONGTITUDE", "TIME"]]
+
         new_data = new_data.values
         reference = bundling(new_data)
         
 
-        rawData = data.to_json(orient="split")
         ref = json.dumps(reference)
+        
 
         
         # pre-training with bundled dataset
         data = [
         {"role": "system","content": "assistant is tourism professional for Singapore"},
+        {"role": "assistant", "content": f'this is raw dataset. assistant will answer based on this data :{rawData}'},
         {"role": "assistant", "content": f'this is bundled data of attractions based on provided raw dataset. each bunddle has at least 2 to 5 attractions in it. assistant will answer based on this data :{ref}'},
         ]
 
@@ -91,7 +104,7 @@
             questionData.clear()
 
 
-        #callback function as an input of addEventListner
+        #callback function
         def eventPushData(e):
             e.preventDefault();
             userInputData = input.value;
@@ -106,7 +119,7 @@
             printQuestion()  
             asyncio.ensure_future(main())
             
-
+        # submit
         eventPush = create_proxy(eventPushData)
         button.addEventListener("click", eventPush);
 
@@ -125,7 +138,7 @@
             body = json.dumps(data)
             response = await request(f"{baseurl}/", body=body, method="POST", headers=headers)
             res = await response.json()
-            printAnswer(res["choices"][0]["message"])
+            printAnswer(res["choices"][0]["message"]["content"])
 
     </py-script>
 

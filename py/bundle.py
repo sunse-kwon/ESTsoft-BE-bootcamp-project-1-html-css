@@ -60,9 +60,9 @@ def bundling(data):
             bundles.append(bundle)
 
     # Print the list of bundles
-    # for i, bundle in enumerate(bundles):
-    #     print(f"Bundle {i+1}:")
-    #     for id, lat, lng, time_spent in bundle:
-    #         print(f"- attraction {id}: ({lat}, {lng}), {time_spent} minutes")
+    for i, bundle in enumerate(bundles):
+        print(f"Bundle {i+1}:")
+        for id, lat, lng, time_spent in bundle:
+            print(f"- attraction {id}: ({lat}, {lng}), {time_spent} minutes")
 
     return bundles
