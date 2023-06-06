@@ -69,7 +69,7 @@
         import numpy as np
         from pyodide.http import open_url
         from pyodide.ffi import create_proxy
-        from js import document
+        from js import document, localStorage
 
         url = (
             "https://raw.githubusercontent.com/sunse523/ormi-dev-project-1/master/py/TOURISM.csv"
@@ -84,7 +84,8 @@
         rawData["TIME"] = 60
         new_data = rawData.loc[:,["OBJECTID","PAGETITLE","OVERVIEW", "IMAGE_PATH", 'LATITUDE', 'LONGTITUDE',"ADDRESS","OPENING_HO","TIME"]]
 
-
+        localStorage.setItem('rawData', 
+        new_data.to_json(orient="split"))
 
         new_data = new_data.loc[:,["OBJECTID", "LATITUDE", "LONGTITUDE", "TIME"]]
         new_data = new_data.values
@@ -98,7 +99,6 @@
         # pre-training with bundled dataset
         data = [
         {"role": "system","content": "assistant is tourism professional for Singapore"},
-        {"role": "assistant", "content": f'this is raw dataset. assistant will answer based on this data :{rawData}'},
         {"role": "assistant", "content": f'this is bundled data of attractions based on provided raw dataset. each bunddle has at least 2 to 5 attractions in it. assistant will answer based on this data :{ref}'},
         ]
 
