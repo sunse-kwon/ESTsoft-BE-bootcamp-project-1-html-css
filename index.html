@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>new chat</title>
 
-
-    <link rel="icon" type="image/png" href="favicon.png" />
-
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 
@@ -49,6 +46,7 @@
         </div>
 
     </main>
+    
 
     <footer>
         <p>Copyright 2023. Chilli All rights reserved.</p>
@@ -69,7 +67,7 @@
         import numpy as np
         from pyodide.http import open_url
         from pyodide.ffi import create_proxy
-        from js import document, localStorage
+        from js import document, localStorage, sessionStorage
 
         url = (
             "https://raw.githubusercontent.com/sunse523/ormi-dev-project-1/master/py/TOURISM.csv"
@@ -95,11 +93,23 @@
         ref = json.dumps(reference)
         
 
+
+        #load form data
+        gender = sessionStorage.getItem('gender')
+        transports = sessionStorage.getItem('transports')
+        travelStyle = sessionStorage.getItem('travelStyle')
+        departure = sessionStorage.getItem('departure')
+        arrival = sessionStorage.getItem('arrival')
+        numPeople = sessionStorage.getItem('numPeople')
+        budget = sessionStorage.getItem('budget')
         
+
         # pre-training with bundled dataset
         data = [
         {"role": "system","content": "assistant is tourism professional for Singapore"},
         {"role": "assistant", "content": f'this is bundled data of attractions based on provided raw dataset. each bunddle has at least 2 to 5 attractions in it. assistant will answer based on this data :{ref}'},
+
+        {"role": "user", "content": f'please create Singapore travel plan considering following criteria.  for {gender}, {numPeople} group of people will join this trip. their travel style is {travelStyle} with {budget} won per person as a budget. they will mainly use {transports} to go one place to another. duration of travel is starting from {departure.split("T")[0]} to {arrival.split("T")[0]}'},
         ]
 
 
@@ -159,7 +169,7 @@
             printAnswer(res["choices"][0]["message"]["content"])
 
     </py-script>
-
+<!-- <script src="/js/index.js"></script> -->
 
 </body>
 </html>

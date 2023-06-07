@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+  <!-- TODO(sunse) : 내일하루종일 코딩해 -->
     <header>
         <h1><a href="/html/main.html">chatgpt travel planner</a></h1>
         <div class="header-click">
@@ -26,21 +27,21 @@
               현재는 싱가포르 지역만 서비스 가능합니다. 타 국가는 추후 업데이트 예정입니다.
             </p>
       
-            <form class="user-info">
-              <fieldset class="field">
+            <form name="formData" class="user-info" action="/index.html" method="POST" onclick="handleSubmit()">
+              <fieldset class="field" >
                 <legend>성별</legend>
                 <ul>
                   <li>
-                    <input name="gender" type="radio" id="gender1">
-                    <label for="gender1">남성</label>
+                    <input name="gender" type="radio" id="genderMale" value="남성">
+                    <label for="genderMale">남성</label>
                   </li>
                   <li>
-                    <input name="gender" type="radio" id="gender2">
-                    <label for="gender2">여성</label>
+                    <input name="gender" type="radio" id="genderFemale" value="여성">
+                    <label for="genderFemale">여성</label>
                   </li>
                   <li>
-                    <input name="gender" type="radio" id="gender3">
-                    <label for="gender3">선택 안함</label>
+                    <input name="gender" type="radio" id="genderUnknown" value="선택 안함">
+                    <label for="genderUnknown">선택 안함</label>
                   </li>
                 </ul>
               </fieldset>
@@ -49,20 +50,20 @@
                 <legend>이동 수단</legend>
                 <ul>
                   <li>
-                    <input name="html" type="checkbox" id="tech1">
-                    <label for="tech1">대중교통</label>
+                    <input class="trans-checkbox" name="public" type="checkbox" id="trans1" value="대중교통">
+                    <label for="trans1">대중교통</label>
                   </li>
                   <li>
-                    <input name="css" type="checkbox" id="tech2">
-                    <label for="tech2">렌트카</label>
+                    <input class="trans-checkbox" name="rental" type="checkbox" id="trans2" value="렌트카">
+                    <label for="trans2">렌트카</label>
                   </li>
                   <li>
-                    <input name="js" type="checkbox" id="tech3">
-                    <label for="tech3">택시</label>
+                    <input class="trans-checkbox" name="taxi" type="checkbox" id="trans3" value="택시">
+                    <label for="trans3">택시</label>
                   </li>
                   <li>
-                    <input name="python" type="checkbox" id="tech4">
-                    <label for="tech4">Grab 혹은 Uber</label>
+                    <input class="trans-checkbox" name="sharing" type="checkbox" id="trans4" value="Grab 혹은 Uber">
+                    <label for="trans4">Grab 혹은 Uber</label>
                   </li>
                 </ul>
               </fieldset>
@@ -71,31 +72,30 @@
                 <legend>여행스타일</legend>
                 <ul>
                   <li>
-                    <input name="travel-style" type="radio" id="nature">
+                    <input name="travel-style" type="radio" id="nature" value="자연">
                     <label for="nature">자연관광</label>
                   </li>
                   <li>
-                    <input name="travel-style" type="radio" id="city">
+                    <input name="travel-style" type="radio" id="city" value="도시">
                     <label for="city">도시관광</label>
                   </li>
 
                   <li>
-                    <input name="travel-style" type="radio" id="foodfighter">
+                    <input name="travel-style" type="radio" id="foodfighter" value="음식">
                     <label for="foodfighter">식도락</label>
                   </li>
                   <li>
-                    <input name="travel-style" type="radio" id="luxury">
+                    <input name="travel-style" type="radio" id="luxury" value="luxury">
                     <label for="luxury">럭셔리</label>
                   </li>
                   <li>
-                    <input name="travel-style" type="radio" id="cost-sensitive">
+                    <input name="travel-style" type="radio" id="cost-sensitive" value="cost-sensitive">
                     <label for="cost-sensitive">가성비</label>
                   </li>
                   <li>
-                    <input name="travel-style" type="radio" id="with-child">
+                    <input name="travel-style" type="radio" id="with-child" value="with child">
                     <label for="with-child">어린이 동반</label>
                   </li>
-
                 </ul>
               </fieldset>
 
@@ -103,13 +103,12 @@
                 <legend>여행 기간</legend>
                 <div>
                     <label for="departure">출발일</label>
-                    <input type="datetime-local" id="departure">
+                    <input type="datetime-local" id="departure" name="departure">
                 </div>
                 <div>
                     <label for="arrival">도착일</label>
-                    <input type="datetime-local" id="arrival">
+                    <input type="datetime-local" id="arrival" name="arrival">
                 </div>
-
               </fieldset>
               
 
@@ -117,19 +116,17 @@
                 <legend>기타</legend>
                 <div>
                   <label for="input-num">인원</label>
-                  <input type="number" id="input-num"> 명
+                  <input type="number" id="input-num" name="num-people"> 명
                 </div>
   
                 <div>
-                    <label for="currency">예산</label>
-                    <input type="number" id="currency"> 원
+                    <label for="budget">예산</label>
+                    <input type="number" id="budget" name="budget"> 원
                 </div>
               </fieldset>
 
               <div class="main-buttons">
-  
                 <button class="submit-button" type="submit">전송</button>
-
                 <button class="reset-button" type="reset">초기화</button>
               </div>
 
@@ -140,6 +137,6 @@
         <p>Copyright 2023. Chilli All rights reserved.</p>
     </footer>
 
-    
+    <script src="/js/main.js"></script>
 </body>
 </html>
