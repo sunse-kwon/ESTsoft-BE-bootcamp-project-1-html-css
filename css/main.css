@@ -1,7 +1,7 @@
 .container {
     width: 600px;
     margin: 60px auto;
-    
+
 }
 
 .title,
@@ -15,7 +15,7 @@
 }
 
 .user-info>div {
-    margin-bottom: 10px;
+    margin-bottom: 100px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -35,18 +35,15 @@
 }
 
 .user-info ul li {
-margin-right: 10px;
+    margin-right: 10px;
 }
 
 
-footer {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
+
 #departure {
     margin-right: 40px;
 }
+
 .num-inputs {
     display: flex;
     justify-content: space-evenly;
@@ -54,25 +51,25 @@ footer {
 
 
 .submit-button {
-	width: 40%;
-	height: 40px;
-	background-color: royalblue;
-	color: white;
-	border-width: 0;
-	border-radius: 4px;
-	font: inherit;
+    width: 40%;
+    height: 40px;
+    background-color: royalblue;
+    color: white;
+    border-width: 0;
+    border-radius: 4px;
+    font: inherit;
     box-sizing: content-box;
-	padding: 0;
+    padding: 0;
 }
 
 .reset-button {
-	width: 40%;
-	height: 40px;
-	background-color: royalblue;
-	color: white;
-	border-width: 0;
-	border-radius: 4px;
-	font: inherit;
-	box-sizing: content-box;
-	padding: 0;
+    width: 40%;
+    height: 40px;
+    background-color: royalblue;
+    color: white;
+    border-width: 0;
+    border-radius: 4px;
+    font: inherit;
+    box-sizing: content-box;
+    padding: 0;
 }

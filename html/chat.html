@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>new chat</title>
+    <title>Bundle Trip planner by chat</title>
 
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 
+    <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/chat.css">
 
     <py-config>
         packages = ["numpy","pandas"]
         [[fetch]]
         from = '/py'
-        files = ['request.py','bundle.py']
+        files = ['request.py','bundle.py','utils.py']
     </py-config>
 
 </head>
 
 <body>
     <header>
-        <h1><a href="/html/main.html">chatgpt travel planner</a></h1>
+        <h1><a href="/index.html">Bundle Trip planner by chat</a></h1>
         <div class="header-click">
-          <a href="/html/main.html">결과</a>
+          <a href="/html/main.html">사용자정보 입력</a>
+          <a href="/html/output.html">여행지 상세정보</a>
         </div>
     </header>
 
     <main>
         <h2 class="main-title">채팅</h2>
-        <p class="main-desc">채팅 페이지입니다.</p>
 
         <div class="chat-wrap">
             <p class="chat-info">chatGPT에게 질문을 해보세요!</p>
@@ -39,7 +40,7 @@
             </div>
             
             <form class="chat-form">
-            <input type="text" />
+            <input class="textbox" type="text" />
             <button id="'button" type="submit">전송</button>
             <button type="reset"> 지우기</button>
             </form>
@@ -49,11 +50,10 @@
     
 
     <footer>
-        <p>Copyright 2023. Chilli All rights reserved.</p>
+        <p>Copyright 2023. Trip by Chat All rights reserved.</p>
     </footer>
 
     <py-script src="/py/chat.py"></py-script>
-<!-- <script src="/js/index.js"></script> -->
 
 </body>
 </html>
