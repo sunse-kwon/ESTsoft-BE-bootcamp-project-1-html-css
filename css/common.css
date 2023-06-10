@@ -25,40 +25,70 @@ button:enabled {
 	cursor: pointer;
 }
 
-
 /* header */
 .header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0 20px;
 	height: 80px;
-	border-bottom: 1px solid #ddd;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: rgb(240, 240, 240);
+	cursor: pointer;
+	background-color: white;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-weight: 400;
 }
-.header h1 a {
-	color: black;
+
+.header-m-r-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: x-large;
 }
-.header-click a,
-.header-click button {
-	padding: 10px 15px;
-	margin-left: 10px;
-	color: black;
-	text-decoration: none;
+.header-left-section {
+	display: flex;
+	font-size: x-large;
+	justify-content: center;
+	align-items: center;
+
 }
-.header-click button {
-	font: inherit;
-	border: 0;
-	background: none;
+
+.header-middle-section {
+	padding: 27px;
+}
+
+.header-right-section {
+	padding: 27px;
+
+}
+
+.icon-container {
+	padding: 14px;
+}
+.header-left-section>a {
+	padding: 27px;
+}
+
+.header-left-section>a:hover,
+.icon-container:hover,
+.header-middle-section:hover,
+.header-right-section:hover {
+    background-color: rgb(235, 235, 235);
 }
 
 
 /* footer */
-
 footer {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
 	background: #eee;
 	padding: 20px 0;
-	margin-top: 80px;
+	/* margin-top: 80px; */
 }

@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Bundle Trip planner by chat</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Nanum+Gothic:wght@400;700;800&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/chat.css">
 
@@ -22,22 +24,32 @@
 </head>
 
 <body>
-    <header>
-        <h1><a href="/index.html">Bundle Trip planner by chat</a></h1>
-        <div class="header-click">
-          <a href="/html/main.html">사용자정보 입력</a>
-          <a href="/html/output.html">여행지 상세정보</a>
+    <header class="header">
+        <div class="header-left-section">
+          <div class="icon-container">
+            <img
+              class="icon"
+              src="/img/density_medium_FILL0_wght400_GRAD0_opsz48.svg"
+            />
+          </div>
+          <a href="/index.html">Bundle Trip planner by chat</a>
         </div>
-    </header>
+  
+        <div class="header-m-r-section">
+          <div class="header-middle-section">
+            <a href="/html/main.html">사용자정보 입력</a>
+          </div>
+          <div class="header-right-section">
+            <a href="/html/attractions.html">여행지 상세정보</a>
+          </div>
+        </div>
+      </header>
 
-    <main>
-        <h2 class="main-title">채팅</h2>
+    <main class="chat-main">
 
         <div class="chat-wrap">
             <p class="chat-info">chatGPT에게 질문을 해보세요!</p>
-            <div class="chat-screen">
-                <ul></ul>
-            </div>
+            
             
             <form class="chat-form">
             <input class="textbox" type="text" />
@@ -46,11 +58,15 @@
             </form>
         </div>
 
+        <div class="chat-screen">
+            <ul></ul>
+        </div>
+
     </main>
     
 
     <footer>
-        <p>Copyright 2023. Trip by Chat All rights reserved.</p>
+        <p>Copyright 2023. Bundle trip planner by chat All rights reserved.</p>
     </footer>
 
     <py-script src="/py/chat.py"></py-script>

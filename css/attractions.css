@@ -1,0 +1,49 @@
+.output-main {
+    padding-top: 100px;
+    background-color:whitesmoke;
+    padding-bottom: 10px;
+}
+
+.display-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 80px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.thumbnail {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 10px;
+  }
+.place-name {
+    font-family: 'Nanum Gothic', sans-serif;
+
+}
+.travel-item>p {
+    margin-top: 10px;
+    font-family: 'Nanum Gothic', sans-serif;
+
+    
+}
+
+@media (max-width: 750px) {
+    .display-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (min-width: 751px) and (max-width: 999px) {
+    .display-grid  {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  @media (min-width: 1000px) {
+    .display-grid  {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }

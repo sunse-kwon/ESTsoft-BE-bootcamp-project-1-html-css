@@ -105,11 +105,9 @@ def printAnswer(answer):
     container.classList.add("divAnswer")
     container.innerHTML = 'AI : '
 
-    for idx, item in enumerate(answer):
+    for _, item in enumerate(answer):
         flexItem = document.createElement('div')
-        flexItem.classList.add(f'flex-item-{idx}')
-        flexItem.setAttribute(
-            'style', "background-color:rgb(250, 188, 240);border-radius:10px;padding:10px;margin:10px;display:flex;justify-content:center;align-items:center")
+        flexItem.classList.add(f'chat-item')
 
         flexItem.innerHTML = item
         container.append(flexItem)
