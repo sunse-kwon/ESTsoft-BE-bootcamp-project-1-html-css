@@ -3,9 +3,8 @@ from pyodide.http import open_url
 from js import localStorage
 
 url = (
-    "https://raw.githubusercontent.com/sunse523/ormi-dev-project-1/master/data/TOURISM.csv"
+    "https://raw.githubusercontent.com/sunse-kwon/ormi-dev-project-1/master/data/TOURISM.csv"
 )
-
 # read dataset to create bunddle
 rawData = pd.read_csv(open_url(url), sep=',', encoding='unicode_escape')
 

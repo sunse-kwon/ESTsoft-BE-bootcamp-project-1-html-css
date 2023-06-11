@@ -13,7 +13,7 @@ from js import document, localStorage, sessionStorage
 baseurl = "https://estsoft-openai-api.jejucodingcamp.workers.dev"
 
 url = (
-    "https://raw.githubusercontent.com/sunse523/ormi-dev-project-1/master/data/TOURISM.csv"
+    "https://raw.githubusercontent.com/sunse-kwon/ormi-dev-project-1/master/data/TOURISM.csv"
 )
 
 # read dataset to create bunddle
