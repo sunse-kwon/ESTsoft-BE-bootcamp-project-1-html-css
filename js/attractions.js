@@ -1,5 +1,5 @@
 
-const loadData = JSON.parse(localStorage.getItem('rawdata'))
+const loadData = JSON.parse(sessionStorage.getItem('rawdata'))
 
 const main = document.querySelector("main");
 main.classList.add("output-main");
