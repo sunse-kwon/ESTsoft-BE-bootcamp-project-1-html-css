@@ -1,6 +1,6 @@
 .main-main {
     display: grid;
-    background-image: url('/img/main.jpg');
+    background-image: url('../img/main.jpg');
     background-size: cover;
     padding-top: 100px;
     height: 1200px;

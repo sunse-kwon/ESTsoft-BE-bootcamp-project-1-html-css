@@ -1,7 +1,7 @@
 .chat-main {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    background-image: url('/img/main.jpg');
+    background-image: url('../img/main.jpg');
     background-size: cover;
     height: 1000px;
     padding-top: 100px;
@@ -101,5 +101,3 @@ ul {
     font-weight: 700;
     font-size: x-large;
 }
-/* font-family: 'Gamja Flower', cursive;
-font-family: 'Roboto', sans-serif; */
