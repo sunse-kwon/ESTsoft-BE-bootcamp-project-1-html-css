@@ -10,5 +10,3 @@ rawData = pd.read_csv(open_url(url), sep=',', encoding='unicode_escape')
 
 # save rawData to local storage to be used in other pages
 localStorage.setItem('rawdata', rawData.to_json(orient="split"))
-
-
