@@ -9,19 +9,15 @@ from pyodide.http import open_url
 from pyodide.ffi import create_proxy
 from js import document, localStorage, sessionStorage
 
-# raw data url
-url = (
-    "https://raw.githubusercontent.com/sunse523/ormi-dev-project-1/master/data/TOURISM.csv"
-)
 # openAI baseurl
 baseurl = "https://estsoft-openai-api.jejucodingcamp.workers.dev"
 
+url = (
+    "https://raw.githubusercontent.com/sunse523/ormi-dev-project-1/master/data/TOURISM.csv"
+)
 
 # read dataset to create bunddle
 rawData = pd.read_csv(open_url(url), sep=',', encoding='unicode_escape')
-
-# save rawData to local storage to be used in other pages
-localStorage.setItem('rawdata', rawData.to_json(orient="split"))
 
 # expected time spend created and assigned 60 minute to all temporarily
 rawData["EXPECTED_TIME_SPENT"] = 60
