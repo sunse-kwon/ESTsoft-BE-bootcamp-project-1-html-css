@@ -71,3 +71,31 @@ ul {
     box-sizing: content-box;
     padding: 0;
 }
+
+
+
+@media (max-width: 390px) {
+    .main-main {
+        background-image: none;
+        height: fit-content;
+        }
+    .main-container {
+        width: 109vw;
+        font-size:xx-small;
+        margin: none;
+    }
+ 
+  }
+  
+  @media (min-width: 391px) and (max-width: 412px) {
+    .main-main {
+        background-image: none;
+        height: fit-content;
+        }
+    .main-container {
+        width: 100vw;
+        font-size: xx-small;
+        margin: none;
+    }
+    
+  }
