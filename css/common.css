@@ -42,40 +42,41 @@ button:enabled {
 	cursor: pointer;
 	background-color: white;
 	font-family: 'Nanum Gothic', sans-serif;
-	font-weight: 400;
+	font-size: 1em;
 }
 
+.header-left-section,
 .header-m-r-section {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: x-large;
 }
+
+
 .header-left-section {
-	display: flex;
-	font-size: x-large;
-	justify-content: center;
-	align-items: center;
-
+	box-sizing:border-box;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
-.header-middle-section {
-	padding: 27px;
-}
 
+.header-middle-section,
 .header-right-section {
-	padding: 27px;
+	padding: 26px;
+	box-sizing:border-box;
 
 }
 
-.icon-container {
-	padding: 14px;
-}
-.header-left-section>a {
-	padding: 27px;
-}
 
-.header-left-section>a:hover,
+.icon-text {
+	margin-left: 5px;
+}
+.icon {
+	width:2rem;
+	height: 2rem;
+	object-fit: cover;
+}
+.header-left-section:hover,
 .icon-container:hover,
 .header-middle-section:hover,
 .header-right-section:hover {

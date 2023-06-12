@@ -24,43 +24,45 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="header-left-section">
-          <div class="icon-container">
-            <img
-              class="icon"
-              src="../img/density_medium_FILL0_wght400_GRAD0_opsz48.svg"
-            />
-          </div>
-          <a href="../index.html">Bundle Trip planner by chat</a>
-        </div>
-  
-        <div class="header-m-r-section">
-          <div class="header-middle-section">
-            <a href="../html/main.html">사용자정보 입력</a>
-          </div>
-          <div class="header-right-section">
-            <a href="../html/attractions.html">여행지 상세정보</a>
-          </div>
-        </div>
-      </header>
+  <header class="header">
+    <div class="header-left-section">
+      
+      <img
+          class="icon"
+          src="../img/world-tour-icon.svg"
+        />
+      
+      <a class="icon-text" href="../index.html">Bundle Trip planner by chat</a>
+    </div>
+
+    <div class="header-m-r-section">
+      <div class="header-middle-section">
+        <a href="../html/main.html">사용자정보 입력</a>
+      </div>
+      <div class="header-right-section">
+        <a href="../html/attractions.html">여행지 상세정보</a>
+      </div>
+    </div>
+  </header>
 
     <main class="chat-main">
+      <h2>저희 서비스는 가까운 관광지끼리 함께 묶은 번들을 제공합니다. 하나의 번들 안에 최소 2개 최대 5개의 관광지가 포함됩니다. </h2>
+      <p class="chat-info">예시. Day 1 - morning: Bundle 1 (관광지 넘버: 관광지 이름, 관광지 넘버: 관광지 이름)</p>
 
         <div class="chat-wrap">
-            <p class="chat-info">chatGPT에게 질문을 해보세요!</p>
-            
+          
+            <div class="chat-screen">
+            <ul></ul>
+            </div>
             
             <form class="chat-form">
-            <input class="textbox" type="text" />
+            <input class="textbox" type="text" placeholder="입력한 내용을 바탕으로 싱가포르 여행 계획 알려줘"/>
             <button id="'button" type="submit">전송</button>
             <button type="reset"> 지우기</button>
             </form>
         </div>
 
-        <div class="chat-screen">
-            <ul></ul>
-        </div>
+        
 
     </main>
     

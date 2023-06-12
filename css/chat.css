@@ -1,28 +1,28 @@
 .chat-main {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
     background-image: url('../img/main.jpg');
     background-size: cover;
     height: 1000px;
     padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 
 }
 
 .chat-wrap {
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 15px;
     border: 1px solid #eeeeee;
     font-family: 'Nanum Gothic', sans-serif;
+    background-color: #eeeeee;
+    opacity: 80%;
 
 }
 
 .chat-info {
-    font-weight:700;
+    text-align: center;
     font-size: x-large;
-    border-bottom: 2px solid #ddd;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    
 }
 
 ul {
@@ -35,16 +35,16 @@ ul {
     display: flex;
     justify-content: flex-start;
     font-family: 'Nanum Gothic', sans-serif;
-    font-size: xx-large;
     color: red;
+    font-weight: 700;
 }
 
 .answer {
     display: flex;
     justify-content: flex-end;
     font-family: 'Nanum Gothic', sans-serif;
-    font-size:xx-large;
     color: blue;
+    font-weight: 700;
     padding-bottom: 10px;
 }
 
@@ -62,42 +62,43 @@ ul {
 }
 
 .chat-screen {
-    overflow-y: scroll; 
-    margin-left: 40px;
+    height: 600px;
+    overflow-y: scroll;
     border-radius: 5px;
+    background-color: #eeeeee;
+    margin-bottom: 30px;
 }
 
 .chat-form {
-    /* background-color:#eeeeee; */
+    background-color:#dfdfdf;
     border-radius: 10px;
     display: flex;
-    flex-direction: column;
-    width: fit-content;
+    justify-content: center;
+    align-items: center;
     gap: 1px;
     padding: 20px;
-    opacity: 80%;
+    opacity: 90%;
 }
 
 .chat-item {
-    width: 650px;
-    background-color:#9bd4df;
+    width: 400px;
+    background-color:#dfdfdf;
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
 }
 
 .textbox {
+    border-radius: 5px;
     width: 400px;
-    height: 40px;
-    border-radius: 10px;
+    height: 45px;
     font-weight: 700;
-    font-size: x-large;
+    border: none;
 }
 .chat-form>button {
-    margin-top: 10px;
-   
-    border-radius: 10px;
+    border-radius: 5px;
     border-width: 1px;
+    font-size: 1rem;
+    height: 45px;
     font-weight: 700;
-    font-size: x-large;
 }
