@@ -15,10 +15,9 @@
     padding: 30px;
     border-radius: 15px;
     border: 1px solid #eeeeee;
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'NanumGothic-Regular', sans-serif;
     background-color: #eeeeee;
     opacity: 80%;
-
 }
 
 .chat-info {
@@ -35,7 +34,7 @@ ul {
     padding-bottom: 5px;
     display: flex;
     justify-content: flex-start;
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'NanumGothic-Regular', sans-serif;
     color: red;
     font-weight: 700;
 }
@@ -43,7 +42,7 @@ ul {
 .answer {
     display: flex;
     justify-content: flex-end;
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'NanumGothic-Regular', sans-serif;
     color: blue;
     font-weight: 700;
     padding-bottom: 10px;
@@ -96,6 +95,7 @@ ul {
     font-weight: 700;
     border: none;
 }
+
 .chat-form>button {
     border-radius: 5px;
     border-width: 1px;
@@ -104,12 +104,12 @@ ul {
     font-weight: 700;
 }
 
-
+/* responsive style for iphone 12 Pro */
 @media (max-width: 390px) {
     .chat-main {
         background-image: none;
         height: fit-content;
-        }
+    }
     .chat-wrap {
         width: 100vw;
     }
@@ -131,11 +131,10 @@ ul {
     .chat-item {
         width: 200px;
     }
+}
 
- 
-  }
-  
-  @media (min-width: 391px) and (max-width: 412px) {
+/* responsive style for Samsung Galuxy S20 Ultra */
+@media (min-width: 391px) and (max-width: 412px) {
     .chat-main {
         background-image: none;
         height: fit-content;
@@ -161,6 +160,4 @@ ul {
     .chat-item {
         width: 200px;
     }
-
-    
-  }
+}

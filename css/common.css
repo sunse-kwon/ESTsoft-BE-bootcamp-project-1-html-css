@@ -25,7 +25,23 @@ button:enabled {
 	cursor: pointer;
 }
 
-/* header */
+/* font ------------------------------------ */
+@font-face {
+	font-family: 'NanumGothic-Regular';
+	src: url('./font/NanumGothic-Regular.ttf') format('woff2');
+  }
+
+  @font-face {
+	font-family: 'NanumGothic-Bold';
+	src: url('./font/NanumGothic-Bold.ttf') format('woff2');
+  }
+
+@font-face {
+	font-family: 'NanumGothic-ExtraBold';
+	src: url('./font/NanumGothic-ExtraBold.ttf') format('woff2');
+  }
+
+/* header ------------------------------------ */
 .header {
 	height: 80px;
 	display: flex;
@@ -41,7 +57,7 @@ button:enabled {
 	border-bottom-color: rgb(240, 240, 240);
 	cursor: pointer;
 	background-color: white;
-	font-family: 'Nanum Gothic', sans-serif;
+	font-family: 'NanumGothic-Regular', sans-serif;
 	font-size: 1em;
 }
 
@@ -52,21 +68,17 @@ button:enabled {
 	align-items: center;
 }
 
-
 .header-left-section {
 	box-sizing:border-box;
 	padding-left: 10px;
 	padding-right: 10px;
 }
 
-
 .header-middle-section,
 .header-right-section {
 	padding: 26px;
 	box-sizing:border-box;
-
 }
-
 
 .icon-text {
 	margin-left: 5px;
@@ -76,6 +88,7 @@ button:enabled {
 	height: 2rem;
 	object-fit: cover;
 }
+
 .header-left-section:hover,
 .icon-container:hover,
 .header-middle-section:hover,
@@ -83,8 +96,7 @@ button:enabled {
     background-color: rgb(235, 235, 235);
 }
 
-
-/* footer */
+/* footer ------------------------------------*/
 footer {
 	display: flex;
 	flex-direction: column;
@@ -92,9 +104,10 @@ footer {
 	background: #eee;
 	padding: 20px 0;
 	margin-top: 20px;
+	font-family: 'NanumGothic-Regular';
 }
 
-
+/* responsive style for iphone 12 Pro */
 @media (max-width: 390px) {
     .header {
       width: 109vw;
@@ -112,6 +125,7 @@ footer {
 	}
   }
 
+/* responsive style for Samsung Galuxy S20 Ultra */
   @media (min-width: 391px) and (max-width: 412px) {
     .header {
 	width: 110vw;
@@ -122,6 +136,5 @@ footer {
 	.header-right-section {
 	padding: none;
 	box-sizing:border-box;
-
 }
   }
