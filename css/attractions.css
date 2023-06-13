@@ -1,58 +1,68 @@
 .output-main {
-    padding-top: 100px;
-    background-color:whitesmoke;
-    background-size: cover;
-    padding-bottom: 10px;
+  padding-top: 100px;
+  background-color: whitesmoke;
+  background-size: cover;
+  padding-bottom: 10px;
 }
 
 .display-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 40px;
-    row-gap: 80px;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 40px;
+  row-gap: 80px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
 }
 
 .thumbnail {
-    margin-top: 10px;
-    width: 100%;
-    border-radius: 10px;
-  }
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 10px;
+}
+
 .place-name {
-    font-family: 'Nanum Gothic', sans-serif;
-
+  font-family: 'NanumGothic-Regular', sans-serif;
 }
+
 .travel-item>p {
-    margin-top: 10px;
-    font-family: 'Nanum Gothic', sans-serif;
-
-    
+  margin-top: 10px;
+  font-family: 'NanumGothic-Regular', sans-serif;
 }
 
+/* responsive style for iphone 12 Pro */
 @media (max-width: 390px) {
-    .display-grid {
-      grid-template-columns:90vw;
-    }
+  .display-grid {
+    grid-template-columns: 90vw;
   }
-  
-  @media (min-width: 391px) and (max-width: 412px) {
-    .display-grid  {
-      grid-template-columns: 90vw;
-      margin-left: none;
-      margin-right:none;
-    }
-  }
+}
 
-  @media (min-width: 413px) and (max-width: 1400px) {
-    .display-grid  {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
+/* responsive style for Samsung Galuxy S20 Ultra */
+@media (min-width: 391px) and (max-width: 412px) {
+  .display-grid {
+    grid-template-columns: 90vw;
+    margin-left: none;
+    margin-right: none;
   }
-  
-  @media (min-width: 1401px) {
-    .display-grid  {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
+}
+
+/* responsive style for apple ipad air */
+@media (min-width: 413px) and (max-width: 1180px) {
+  .display-grid {
+    grid-template-columns: 1fr 1fr;
   }
+}
+
+/* responsive style for laptop */
+@media (min-width: 1181px) and (max-width: 1920px) {
+  .display-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* responsive style for desktop */
+@media (min-width: 1921px) {
+  .display-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

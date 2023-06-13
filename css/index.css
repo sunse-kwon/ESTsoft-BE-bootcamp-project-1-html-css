@@ -17,24 +17,23 @@
     opacity: 80%;
     border-radius: 10px;
     border-width: 1px;
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'NanumGothic-Regular', sans-serif;
     font-weight: 700;
     font-size: x-large;
-
 }
 
 .intro-text {
-    font-size: xx-large;
     text-align: center;
+    font-family: 'NanumGothic-Regular';
+    font-size: xx-large;
 }
 
-
+/* responsive style for iphone 12 Pro */
 @media (max-width: 390px) {
     .index-main {
         background-image: none;
         height:90vh;
-        }
-
+    }
     .intro-text {
         font-size: small;
     }
@@ -44,19 +43,18 @@
         opacity: 80%;
         border-radius: 10px;
         border-width: 1px;
-        font-family: 'Nanum Gothic', sans-serif;
+        font-family: 'NanumGothic-Regular', sans-serif;
         font-weight: 700;
         font-size: inherit;
-    
     }
-  }
-  
-  @media (min-width: 391px) and (max-width: 412px) {
+}
+
+/* responsive style for Samsung Galuxy S20 Ultra */
+@media (min-width: 391px) and (max-width: 412px) {
     .index-main {
         background-image: none;
         height:90vh;
-        }
-
+    }
     .intro-text {
         font-size: small;
     }
@@ -66,10 +64,8 @@
         opacity: 80%;
         border-radius: 10px;
         border-width: 1px;
-        font-family: 'Nanum Gothic', sans-serif;
+        font-family: 'NanumGothic-Regular', sans-serif;
         font-weight: 700;
         font-size: inherit;
-    
     }
-    
-  }
+}
