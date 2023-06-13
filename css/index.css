@@ -3,10 +3,12 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 1200px;
+    height: 1000px;
     background-image: url('../img/index.jpg');
     background-size: cover;
     opacity: 80%;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .index-btn {
