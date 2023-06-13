@@ -4,19 +4,18 @@ from utils import genRef
 import asyncio
 import json
 import pandas as pd
-import numpy as np
 from pyodide.http import open_url
 from pyodide.ffi import create_proxy
-from js import document, localStorage, sessionStorage
+from js import document, sessionStorage, JSON
 
-# openAI baseurl
-baseurl = "https://estsoft-openai-api.jejucodingcamp.workers.dev"
 
-url = (
-    "https://raw.githubusercontent.com/sunse-kwon/ormi-dev-project-1/master/data/TOURISM.csv"
-)
+# url of openAI API
+baseurl = JSON.parse(sessionStorage.getItem('baseURL'))
 
-# read dataset to create bunddle
+# url of raw dataset
+url = JSON.parse(sessionStorage.getItem('rawURL'))
+
+# read raw dataset from url
 rawData = pd.read_csv(open_url(url), sep=',', encoding='unicode_escape')
 
 # expected time spend created and assigned 60 minute to all temporarily
@@ -26,15 +25,16 @@ rawData["EXPECTED_TIME_SPENT"] = 60
 rawData = rawData.loc[:, ["OBJECTID", 'LATITUDE', 'LONGTITUDE', "EXPECTED_TIME_SPENT",
                           "PAGETITLE", "OVERVIEW", "IMAGE_PATH", "ADDRESS", "OPENING_HO"]]
 
-
-# convert pandas dataframe to numpy array to be used in algorithm.
+# convert pandas dataframe to numpy like array to be used in bundling algorithm.
 new_data = rawData.values
 
-# bundling process done based on nearst locations
+# use bundling algorithm imported from bundle.py. convert raw dataset to bundled dataset by using bundling algorithm.
 reference = bundling(new_data)
+
+# use genRef function imported from utils.py. convert bundled dataset to be json style with meaningful text.
 ref = genRef(reference)
 
-# convert numpy array to json file to be used in data for reliability of chatgpt
+# convert numpy like array to json file to be used in data for reliability of chatgpt
 ref = json.dumps(ref)
 
 # load FORM inputs
@@ -46,7 +46,6 @@ arrival = sessionStorage.getItem('arrival')
 numPeople = sessionStorage.getItem('numPeople')
 budget = sessionStorage.getItem('budget')
 
-
 #  data preparation to enhance reliability of answer.
 data = [{
     "role": "system", "content": "assistant is tourism professional for Singapore"
@@ -57,7 +56,7 @@ data = [{
     "role": "user",
     "content": f'please create Singapore travel plan considering following criteria. First, think step by step about each criterion in turn. (1) for a gender of {gender}, {numPeople} people are consist of the group for a trip. (2) their travel style is {travelStyle}. (3) {budget} korean won per person is the budget for entire trip. (4) they will mainly use {transports} to move from one place to another. (5) duration of travel is starting from {departure.split("T")[0]} to {arrival.split("T")[0]}.'
 },
-    # 2. provided pre-processed dataset which consist of bundles. and guideline for usage of bundle.
+    # 2. provided pre-processed bundle dataset which consist of 23 bundles. and guideline for usage of bundle.
     {
     "role": "assistant", "content": f'assistant will create travel plan only using bundles which can be found following dataset: {ref}. think step by step following guideline in turn when using bundle. guideline : (1)maximum three bundles can be used in one day. (2)when creating daily plan, only one bundle can be used for each time window (morning, afternoon, evening). (3)when presenting items in a bundle, minimum two items to maximum five items can be selected'
 },
@@ -72,15 +71,13 @@ data = [{
 },
 ]
 
-
+#selecting elements in chat.html
 inputChat = document.querySelector(".textbox")
 buttonChat = document.querySelector("button")
 chatList = document.querySelector("ul")
 
-
 # 화면에 뿌려줄 데이터, 질문들
 questionData = []
-
 
 # 화면에 질문 그려주는 함수
 def printQuestion():
@@ -91,7 +88,6 @@ def printQuestion():
         chatList.appendChild(li)
     questionData.clear()
 
-
 # 화면에 답변 그려주는 함수
 def printAnswer(answer):
     answer = answer.split("\n\n")
@@ -100,16 +96,13 @@ def printAnswer(answer):
     container = document.createElement("div")
     container.classList.add("divAnswer")
     container.innerHTML = 'AI : '
-
     for _, item in enumerate(answer):
         flexItem = document.createElement('div')
         flexItem.classList.add(f'chat-item')
-
         flexItem.innerHTML = item
         container.append(flexItem)
         li.append(container)
     chatList.appendChild(li)
-
 
 # callback function for AddEventListener
 def eventPushData(e):
@@ -125,11 +118,9 @@ def eventPushData(e):
     printQuestion()
     asyncio.ensure_future(main())
 
-
-# submit button
+# event fires, once click the button
 eventPush = create_proxy(eventPushData)
 buttonChat.addEventListener("click", eventPush)
-
 
 # chatGPT API communication
 async def main():

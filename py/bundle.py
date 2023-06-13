@@ -1,13 +1,12 @@
 import numpy as np
 
-
 def bundling(data):
     # Set maximum time spent and distance for a bundle
-    MAX_TIME_SPENT = 300
+    MAX_TIME_SPENT = 300 # in minute
     MAX_DISTANCE = 10  # in km
 
     # Set minimum time_spent and distance for a bundle
-    MIN_TIME_SPENT = 120
+    MIN_TIME_SPENT = 120 # in minute
     MIN_DISTANCE = 5  # in km
 
     # Set maximum number of attraction in a bundle
@@ -28,6 +27,7 @@ def bundling(data):
         opening_hour = str(row[8])
         attractions.append((id, lat, lng, time_spent, page_title,
                            overview, image_path, address, opening_hour))
+        
     # Initialize the list of bundles and visited attraction
     bundles = []
     visited = set()
@@ -69,12 +69,5 @@ def bundling(data):
         # If the bundle meets the conditions, add it to the list of bundles
         if total_time >= MIN_TIME_SPENT and total_time <= MAX_TIME_SPENT and total_distance <= MAX_DISTANCE and len(bundle) >= MIN_ATTRACTION:
             bundles.append(bundle)
-
-    # # Print the list of bundles
-    # for i, bundle in enumerate(bundles):
-    #     print(f"Bundle {i+1}:")
-    #     for id, lat, lng, time_spent, page_title, overview, image_path, address, opening_hour in bundle:
-    #         print(
-    #             f"- attraction {id}: ({lat}, {lng}, {page_title},{overview},{image_path},{address},{opening_hour}), {time_spent} minutes")
 
     return bundles

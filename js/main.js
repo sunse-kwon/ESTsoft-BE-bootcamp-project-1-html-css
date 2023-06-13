@@ -1,3 +1,5 @@
+
+// function to transfer user input from main.html to chat.html page.
 function handleSubmit () {
     const gender  = document.querySelector('input[name="gender"]:checked').value;
     const transports  = document.querySelectorAll('input[type="checkbox"]:checked')
@@ -21,6 +23,5 @@ function handleSubmit () {
 
     return ;
 }
-
 
 
