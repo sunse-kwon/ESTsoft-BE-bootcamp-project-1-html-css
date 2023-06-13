@@ -10,7 +10,10 @@
     margin-left: 20px;
     margin-right: 20px;
 }
-
+.chat-main>h2 {
+    text-align: center;
+    word-wrap: break-word;
+}
 .chat-wrap {
     padding: 30px;
     border-radius: 15px;

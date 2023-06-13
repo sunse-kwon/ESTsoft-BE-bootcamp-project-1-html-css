@@ -12,7 +12,7 @@
 
 ### 세부기능
 - 관광지 bundling: bundling algorithm을 활용하여 raw dataset(총107개 관광지로 구성) 안의 여행지의 거리 및 관광소요시간을 계산하여 가까운 관광지끼리 하나의 bundle로 묶는다.(총 23개의 번들, 각 번들은 최소 2개 최대 5개의 관광지들로 구성, 거리계산은 최소 5km 최대 10km 인 것들끼리 묶음, 관광소요시간은 편의를 위해 모든관광지를 각 60분으로 통일), raw dataset을 bundle로 변환 후 chatGPT에 전달.
-- index 페이지: 첫화면에서 메인페이지로 전환, raw dataset을 읽어와 attraction 페이지에 데이터 전송.
+- index 페이지: 첫화면에서 메인페이지로 전환, url을 sessionStorage를 이용하여 chat 및 attraction 페이지에 필요한 url 전송.
 - main 페이지: 개인화된 답변을 주기위해 여행에 필요한 정보 입력시, chat 페이지에 전달.
 - chat 페이지: 유저 input과 관광지 번들을 활용하여 chatGPT와 API 통신, chatGPT가 개인화된 싱가포르 여행계획 생성.
 - attraction 페이지: raw dataset에 있는 총 107개 관광지 정보를 카드형태로 출력.
