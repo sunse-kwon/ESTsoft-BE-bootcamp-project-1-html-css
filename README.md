@@ -25,12 +25,21 @@
 
 ### 프로젝트 구조
 ```
+📦 
 ├─ index.html
+├─ .DS_Store
 ├─ README.md
 ├─ css
+│  ├─ .DS_Store
 │  ├─ attractions.css
 │  ├─ chat.css
 │  ├─ common.css
+│  ├─ font
+│  │  ├─ .DS_Store
+│  │  ├─ NanumGothic-Bold.ttf
+│  │  ├─ NanumGothic-ExtraBold.ttf
+│  │  ├─ NanumGothic-Regular.ttf
+│  │  └─ OFL.txt
 │  ├─ index.css
 │  └─ main.css
 ├─ data
@@ -40,16 +49,72 @@
 │  ├─ chat.html
 │  └─ main.html
 ├─ img
-│  ├─ density_medium_FILL0_wght400_GRAD0_opsz48.svg
+│  ├─ .DS_Store
 │  ├─ index.jpg
-│  └─ main.jpg
+│  ├─ main.jpg
+│  └─ world-tour-icon.svg
 ├─ js
+│  ├─ .DS_Store
+│  ├─ PapaParse-5.0.2
+│  │  ├─ .eslintrc.js
+│  │  ├─ .gitignore
+│  │  ├─ .npmignore
+│  │  ├─ .travis.yml
+│  │  ├─ Gruntfile.js
+│  │  ├─ LICENSE
+│  │  ├─ README.md
+│  │  ├─ bower.json
+│  │  ├─ docs
+│  │  │  ├─ CNAME
+│  │  │  ├─ Caddyfile
+│  │  │  ├─ demo.html
+│  │  │  ├─ docs.html
+│  │  │  ├─ faq.html
+│  │  │  ├─ favicon.ico
+│  │  │  ├─ index.html
+│  │  │  └─ resources
+│  │  │     ├─ css
+│  │  │     │  ├─ common.css
+│  │  │     │  ├─ demo.css
+│  │  │     │  ├─ home.css
+│  │  │     │  ├─ tomorrow.highlight.css
+│  │  │     │  └─ unsemantic.css
+│  │  │     ├─ files
+│  │  │     │  ├─ big.csv
+│  │  │     │  ├─ malformed.tsv
+│  │  │     │  └─ normal.csv
+│  │  │     └─ js
+│  │  │        ├─ common.js
+│  │  │        ├─ demo.js
+│  │  │        ├─ highlight.min.js
+│  │  │        ├─ home.js
+│  │  │        ├─ jquery.min.js
+│  │  │        ├─ lovers.js
+│  │  │        ├─ papaparse.js
+│  │  │        └─ skrollr.min.js
+│  │  ├─ package.json
+│  │  ├─ papaparse.js
+│  │  ├─ papaparse.min.js
+│  │  ├─ player
+│  │  │  ├─ player.css
+│  │  │  ├─ player.html
+│  │  │  └─ player.js
+│  │  └─ tests
+│  │     ├─ .eslintrc.js
+│  │     ├─ long-sample.csv
+│  │     ├─ node-tests.js
+│  │     ├─ sample.csv
+│  │     ├─ test-cases.js
+│  │     ├─ test.js
+│  │     ├─ tests.html
+│  │     └─ verylong-sample.csv
 │  ├─ attractions.js
-│  └─ main.js
+│  ├─ main.js
+│  └─ url.js
 └─ py
+   ├─ .DS_Store
    ├─ bundle.py
    ├─ chat.py
-   ├─ index.py
    ├─ request.py
    └─ utils.py
 ```
