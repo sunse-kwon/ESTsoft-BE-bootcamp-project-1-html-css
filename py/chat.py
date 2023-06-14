@@ -64,10 +64,20 @@ data = [{
     {
     "role": "assistant", "content": f'when creating answer, think step by step. first, plan will be divided such as Day 1, Day 2, Day 3, etc. Second, when creating daily plan, Day will be divided by three time windows(morning, afternoon, evening). Thrid, for each time window, one bundle can be used per time window. Fourth, for items in a bundle, answer format will be (attraction number : attraction name)'
 },
-    # 4. actual questions considering all criterian. (#1, #2, #3)
+    # 4. example questions considering all criterian. (#1, #2, #3)
     {
-    "role": "user",
-    "content": "create singapore travel plan by thinking step by step. first, consider user criteria provided ahead. second, selecting suitable Bundles among bundles considering guideline. third, generate travel plan based on example."
+    "role": "assistant",
+    "content": "assistant will create singapore travel plan by thinking step by step. first, consider user criteria provided ahead. second, selecting suitable bundles from bundle list considering guideline. third, generate travel plan based on example."
+},
+    # 5. translate language from English to Korean.
+    {
+    "role": "assistant",
+    "content": "when return answer, assistant will translate language from English to Korean."
+},
+    # 6. auto reply after return answer to user.
+    {
+    "role": "assistant",
+    "content": "after return answer to user, assistant will give additional message to user such as '이 계획이 유용하다면 즐거운 여행이 되길 바라며, 더 궁금한 사항이 있으시면 AI에게 추가적으로 질문해 보세요."
 },
 ]
 
