@@ -135,6 +135,11 @@
 - attractions.html
 ![attractions](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/79f752b7-bc54-4fea-94f1-5e433c97b535)
 
+### chat.html 페이지 사용 예시 
+![chatinput](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/1d1dfb65-93ef-4343-b331-af2604da603d)
+
+![chatoutput](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/febf574d-6287-4f60-83f1-7cd6dba9ec6c)
+
 ### Reference
 - data source: TOURRISM.csv dataset is originally aquired from https://data.gov.sg/dataset/tourist-attractions and then converted to csv format. 
 - techniques to improve reliability: https://github.com/openai/openai-cookbook/blob/main/techniques_to_improve_reliability.md 
