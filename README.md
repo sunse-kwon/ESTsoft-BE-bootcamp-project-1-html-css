@@ -23,6 +23,9 @@
 ### 배포 url
 - https://sunse-kwon.github.io/ormi-dev-project-1/
 
+### 개발 일정
+- 2023년 5월 30일 ~ 2023년 6월 15일
+
 ### 프로젝트 구조
 ```
 📦 
@@ -119,8 +122,18 @@
    └─ utils.py
 ```
 
-### 개발 일정
-- 2023년 5월 30일 ~ 2023년 6월 15일
+### 페이지 디자인
+- index.html
+![index](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/89c11ef4-9c5f-48a2-9f3c-0e23b2d4c4b6)
+
+- main.html
+![main](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/bd08f485-04d7-4a97-9b7f-843d6e4a5a17)
+
+- chat.html
+![chat](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/7d4fde9d-64dc-415b-8837-b73d5a9aad8f)
+
+- attractions.html
+![attractions](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/79f752b7-bc54-4fea-94f1-5e433c97b535)
 
 ### Reference
 - data source: TOURRISM.csv dataset is originally aquired from https://data.gov.sg/dataset/tourist-attractions and then converted to csv format. 
