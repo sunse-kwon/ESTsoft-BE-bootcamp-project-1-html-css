@@ -11,8 +11,8 @@
 
 .main-container {
     display: grid;
-    width: 40em;
-    height: 45em;
+    width: 600px;
+    height: 600px;
     margin: 90px 0 0 0;
     padding: 20px;
     background-color:#eeeeee;
