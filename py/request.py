@@ -1,3 +1,4 @@
+# 파이스크립트 통신을 하기위한 함수, 공식홈페이지 참조.
 from pyodide.http import pyfetch, FetchResponse
 from typing import Optional, Any
 

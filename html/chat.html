@@ -1,74 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Bundle Trip planner by chat</title>
+    <title>Bundle Trip Planner by Chat</title>
+    <!-- pyscript -->
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <!-- css -->
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/chat.css">
-
+    <!-- import packages, modules -->
     <py-config>
         packages = ["numpy","pandas"]
         [[fetch]]
         from = '../py'
         files = ['request.py','bundle.py','utils.py']
     </py-config>
+  </head>
 
-</head>
-
-<body>
-  <header class="header">
-    <div class="header-left-section">
-      
-      <h1>
-        <img
-            class="icon"
-            src="../img/world-tour-icon.svg"
-          />
-      </h1>
-      
-      <a class="icon-text" href="../index.html">
-        Bundle Trip planner by chat
-      </a>
-    </div>
-
-    <div class="header-m-r-section">
-      <div class="header-middle-section">
-        <a href="../html/main.html">사용자정보 입력</a>
+  <body>
+    <header class="header">
+      <h1></h1>
+      <div class="header-left-section">
+        <img class="icon" src="../img/world-tour-icon.svg"/>
+        <a class="icon-text" href="../index.html">Bundle Trip Planner by Chat</a>
       </div>
-      <div class="header-right-section">
-        <a href="../html/attractions.html">여행지 상세정보</a>
+      <div class="header-m-r-section">
+        <div class="header-middle-section">
+          <a href="../html/main.html">사용자정보 입력</a>
+        </div>
+        <div class="header-right-section">
+          <a href="../html/attractions.html">여행지 상세정보</a>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
     <main class="chat-main">
-      <h2>저희 서비스는 가까운 관광지끼리 함께 묶은 번들을 제공합니다.</h2>
-      <p class="chat-info">하나의 번들 안에 최소 2개 최대 5개의 관광지가 포함됩니다.</p>
-      <p class="chat-info">예시. Day 1 - morning: Bundle 1 (관광지 번호: 관광지 이름, 관광지 번호: 관광지 이름)</p>
-      <p class="chat-info">사용자 입력정보가 chatGPT에게 전달되었습니다. AI에게 질문을 해주세요. </p>
-        <div class="chat-wrap">
-          
-            <div class="chat-screen">
-            <ul></ul>
-            </div>
-            
-            <form class="chat-form">
-            <input class="textbox" type="text" placeholder="예시: 입력한 내용을 바탕으로 싱가포르 여행 계획 알려줘"/>
-            <button id="'button" type="submit">전송</button>
-            <button type="reset"> 지우기</button>
-            </form>
+      <h2 class="chat-info">답변 예시: Day 1 - Morning: Bundle 1 &#40; 관광지 번호: 관광지 이름, 관광지 번호: 관광지 이름 &#41;</h2>
+      <h2 class="chat-info">사용자 입력정보가 chatGPT에게 전달되었습니다. AI에게 질문을 해주세요. </h2>
+      <!-- chat-box -->
+      <div class="chat-wrap">
+        <div class="chat-screen">
+          <ul></ul>
         </div>
+        <form class="chat-form">
+          <input class="textbox" type="text" placeholder="예시: 입력한 내용을 바탕으로 싱가포르 여행 계획 알려줘"/>
+          <button id="'button" type="submit">전송</button>
+          <button type="reset"> 초기화</button>
+        </form>
+      </div>
+      <!-- /chat-box -->
     </main>
-    
-    <footer>
-        <p>Copyright 2023. Bundle trip planner by chat All rights reserved.</p>
+
+    <footer class="footer">
+      <p>Copyright 2023. Bundle Trip Planner by Chat All rights reserved.</p>
     </footer>
-
+    <!-- pyscript -->
     <py-script src="../py/chat.py"></py-script>
-
-</body>
+  </body>
 </html>
