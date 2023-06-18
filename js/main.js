@@ -1,5 +1,5 @@
 
-// function to transfer user input from main.html to chat.html page.
+// 메인 페이지의 form의 input들의 선택된 값을 챗 페이지로 전달해주는 함수
 function handleSubmit () {
     const gender  = document.querySelector('input[name="gender"]:checked').value;
     const transports  = document.querySelectorAll('input[type="checkbox"]:checked')

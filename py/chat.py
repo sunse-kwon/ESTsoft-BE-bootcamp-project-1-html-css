@@ -9,35 +9,35 @@ from pyodide.ffi import create_proxy
 from js import document, sessionStorage, JSON
 
 
-# url of openAI API
-baseurl = JSON.parse(sessionStorage.getItem('baseURL'))
+# openAI API를 가져옴
+baseurl = sessionStorage.getItem('baseURL')
 
-# url of raw dataset
-url = JSON.parse(sessionStorage.getItem('rawURL'))
+# TOURISM.csv url 가져옴
+url = sessionStorage.getItem('rawURL')
 
-# read raw dataset from url
+# pandas 패키지로 csv 파일 읽어옴
 rawData = pd.read_csv(open_url(url), sep=',', encoding='unicode_escape')
 
-# expected time spend created and assigned 60 minute to all temporarily
+# bundling 알고리즘 실행을 위해 필수적인 attribute인 예상소요시간을 생성, 편의를 위하여 모든관광지를 소요시간을 60분으로 통일
 rawData["EXPECTED_TIME_SPENT"] = 60
 
-# subsetting dataset
+# bundling 알고리즘에 실행에 필요한 위도 경도, 예상소요 시간 및, ChatGPT에 input으로 넣어줄 attribute들만 선택.
 rawData = rawData.loc[:, ["OBJECTID", 'LATITUDE', 'LONGTITUDE', "EXPECTED_TIME_SPENT",
                           "PAGETITLE", "OVERVIEW", "IMAGE_PATH", "ADDRESS", "OPENING_HO"]]
 
-# convert pandas dataframe to numpy like array to be used in bundling algorithm.
+#bundling 알고리즘에 넣어주기 위해 pandas dataframe 을 numpy array로 변환
 new_data = rawData.values
 
-# use bundling algorithm imported from bundle.py. convert raw dataset to bundled dataset by using bundling algorithm.
+# 번들링 알고리즘을 사용하여 위에 데이터를 번들로 묶어준 데이터셋으로 변환. bundle.py 에서 함수를 import 함.
 reference = bundling(new_data)
 
-# use genRef function imported from utils.py. convert bundled dataset to be json style with meaningful text.
+# genRef 함수를 활용하여 리스트 형태로 반환된 번들화된 데이터셋을 딕셔너리 형태로 변환. utils.py 에서 함수를 import 함
 ref = genRef(reference)
 
-# convert numpy like array to json file to be used in data for reliability of chatgpt
+# 위에 딕셔너리 형태의 파일을 json으로 변환. ChatGPT에 input으로 넣어줄 최종형태
 ref = json.dumps(ref)
 
-# load FORM inputs
+# 메인 페이지의 form에서 사용자가 입력한 값들을 세션스토리지를 통해 읽어옴.
 gender = sessionStorage.getItem('gender')
 transports = sessionStorage.getItem('transports')
 travelStyle = sessionStorage.getItem('travelStyle')
@@ -46,7 +46,7 @@ arrival = sessionStorage.getItem('arrival')
 numPeople = sessionStorage.getItem('numPeople')
 budget = sessionStorage.getItem('budget')
 
-#  data preparation to enhance reliability of answer.
+# ChatGPT에 input으로 넣어줄 데이터 준비 및 답변의 신뢰성을 향상시키기 위한 다양한 테크닉 사용. README.md 파일의 Reference(techniques to improve reliability) 참조
 data = [{
     "role": "system", "content": "assistant is tourism professional for Singapore"
 },
@@ -54,7 +54,7 @@ data = [{
     {
 
     "role": "user",
-    "content": f'please create Singapore travel plan considering following criteria. First, think step by step about each criterion in turn. (1) for a gender of {gender}, {numPeople} people are consist of the group for a trip. (2) their travel style is {travelStyle}. (3) {budget} korean won per person is the budget for entire trip. (4) they will mainly use {transports} to move from one place to another. (5) duration of travel is starting from {departure.split("T")[0]} to {arrival.split("T")[0]}.'
+    "content": f'please create Singapore travel plan considering following criteria. First, think step by step about each criterion in turn. (1) for a gender of {gender}, {numPeople} people are consist of the group for a trip. (2) their travel style is {travelStyle}. (3) {budget} korean won per person is the budget for entire trip. (4) they will mainly use {transports} to move from one place to another. (5) duration of travel is starting from {departure} to {arrival}.'
 },
     # 2. provided pre-processed bundle dataset which consist of 23 bundles. and guideline for usage of bundle.
     {
@@ -81,7 +81,7 @@ data = [{
 },
 ]
 
-#selecting elements in chat.html
+# DOM을 활용하여 요소들을 선택하여 변수로 할당
 inputChat = document.querySelector(".textbox")
 buttonChat = document.querySelector("button")
 chatList = document.querySelector("ul")
@@ -114,7 +114,7 @@ def printAnswer(answer):
         li.append(container)
     chatList.appendChild(li)
 
-# callback function for AddEventListener
+# AddEventListener 실행을 위한 콜백함수
 def eventPushData(e):
     e.preventDefault()
     userInputData = inputChat.value
@@ -128,11 +128,11 @@ def eventPushData(e):
     printQuestion()
     asyncio.ensure_future(main())
 
-# event fires, once click the button
+# 버튼을 클릭하면 이벤트 활성화되어 콜백함수 실행
 eventPush = create_proxy(eventPushData)
 buttonChat.addEventListener("click", eventPush)
 
-# chatGPT API communication
+# ChatGPT API 통신을 위한 함수
 async def main():
     headers = {"Content-type": "application/json"}
     body = json.dumps(data)

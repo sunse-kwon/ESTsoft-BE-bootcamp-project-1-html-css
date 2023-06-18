@@ -1,41 +1,47 @@
+
 .index-main {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 1000px;
     background-image: url('../img/index.jpg');
     background-size: cover;
-    opacity: 80%;
-    margin-left: 20px;
-    margin-right: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 92vh;
 }
 
-.index-btn {
-    height: 50px;
-    width: 300px;
-    opacity: 80%;
-    border-radius: 10px;
-    border-width: 1px;
-    font-family: 'NanumGothic-Regular', sans-serif;
-    font-weight: 700;
+.btn-index {
+    color:#ffffff;
+    padding: 10px 20px 10px 20px;
+    border-style: solid;
+    border-radius: 5px;
+    font-family: 'NanumGothic-Bold', sans-serif;
     font-size: x-large;
 }
 
 .intro-text {
+    color:#ffffff;
     text-align: center;
-    font-family: 'NanumGothic-Regular';
+    font-family: 'NanumGothic-Bold';
     font-size: xx-large;
+    margin: 30px;
 }
-
+.intro-text>p {
+    padding-top: 20px;
+}
+.btn-index:hover {
+    background-color:#ffffff;
+    color:#000000;
+    border-color:#ffffff;
+}
 /* responsive style for iphone 12 Pro */
 @media (max-width: 390px) {
     .index-main {
-        background-image: none;
         height:90vh;
     }
-    .intro-text {
-        font-size: small;
+    .intro-text>p {
+        font-size: x-small;
     }
     .index-btn {
         height: 40px;
@@ -47,16 +53,18 @@
         font-weight: 700;
         font-size: inherit;
     }
+    .footer {
+        font-size: x-small;
+    }
 }
 
 /* responsive style for Samsung Galuxy S20 Ultra */
 @media (min-width: 391px) and (max-width: 412px) {
     .index-main {
-        background-image: none;
         height:90vh;
     }
-    .intro-text {
-        font-size: small;
+    .intro-text>p {
+        font-size: x-small;
     }
     .index-btn {
         height: 40px;

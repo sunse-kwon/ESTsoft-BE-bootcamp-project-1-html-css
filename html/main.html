@@ -4,24 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bundle Trip planner by chat</title>
+    <title>Bundle Trip Planner by Chat</title>
+    <!-- css -->
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/main.css" />
   </head>
+
   <body>
     <header class="header">
+      <h1></h1>
       <div class="header-left-section">
-        
-        <h1>
-          <img
-              class="icon"
-              src="../img/world-tour-icon.svg"
-            />
-        </h1>
-        
-        <a class="icon-text" href="../index.html">Bundle Trip planner by chat</a>
+        <img class="icon" src="../img/world-tour-icon.svg" />
+        <a class="icon-text" href="../index.html">Bundle Trip Planner by Chat</a>
       </div>
-
       <div class="header-m-r-section">
         <div class="header-middle-section">
           <a href="../html/main.html">사용자정보 입력</a>
@@ -39,213 +34,107 @@
           현재는 싱가포르 지역만 서비스 가능합니다. 타 국가는 추후 업데이트
           예정입니다.
         </p>
-
-        <form
-          name="formData"
-          class="user-info"
-          action="../html/chat.html"
-          method="get"
-          onclick="handleSubmit()"
-        >
-          <fieldset class="field">
-            <legend>성별</legend>
+        <!-- form -->
+        <form name="form-data" class="user-info" action="../html/chat.html" method="get" onclick="handleSubmit()">
+          <fieldset>
+            <legend>아래 정보를 입력해주세요</legend>
             <ul>
               <li>
-                <input
-                  name="gender"
-                  type="radio"
-                  id="genderMale"
-                  value="male"
-                  required
-                />
-                <label for="genderMale">남성</label>
+                <input name="gender" type="radio" id="gender-male" value="male" required/>
+                <label for="gender-male">남성</label>
               </li>
               <li>
-                <input
-                  name="gender"
-                  type="radio"
-                  id="genderFemale"
-                  value="female"
-                />
-                <label for="genderFemale">여성</label>
+                <input name="gender" type="radio" id="gender-female" value="female"/>
+                <label for="gender-female">여성</label>
               </li>
               <li>
-                <input
-                  name="gender"
-                  type="radio"
-                  id="genderMixed"
-                  value="male and female mixed"
-                />
-                <label for="genderUnknown">남녀 혼성</label>
+                <input name="gender" type="radio" id="gender-mixed" value="male and female mixed"/>
+                <label for="gender-mixed">남녀 혼성</label>
               </li>
               <li>
-                <input
-                  name="gender"
-                  type="radio"
-                  id="genderUnknown"
-                  value="unknown"
-                />
-                <label for="genderUnknown">선택 안함</label>
+                <input name="gender" type="radio" id="gender-unknown" value="unknown"/>
+                <label for="gender-unknown">선택 안함</label>
               </li>
             </ul>
-          </fieldset>
-
-          <fieldset class="field">
-            <legend>이동 수단</legend>
+  
             <ul>
               <li>
-                <input
-                  class="trans-checkbox"
-                  name="public"
-                  type="checkbox"
-                  id="trans1"
-                  value="public transport"
-                />
+                <input class="trans-checkbox" name="public" type="checkbox" id="trans1" value="public transport"/>
                 <label for="trans1">대중교통</label>
               </li>
               <li>
-                <input
-                  class="trans-checkbox"
-                  name="rental"
-                  type="checkbox"
-                  id="trans2"
-                  value="car rent"
-                />
+                <input class="trans-checkbox" name="rental" type="checkbox" id="trans2" value="car rent"/>
                 <label for="trans2">렌트카</label>
               </li>
               <li>
-                <input
-                  class="trans-checkbox"
-                  name="taxi"
-                  type="checkbox"
-                  id="trans3"
-                  value="taxi"
-                />
+                <input class="trans-checkbox" name="taxi" type="checkbox" id="trans3" value="taxi"/>
                 <label for="trans3">택시</label>
               </li>
               <li>
-                <input
-                  class="trans-checkbox"
-                  name="sharing"
-                  type="checkbox"
-                  id="trans4"
-                  value="Grab or Uber"
-                />
+                <input class="trans-checkbox" name="sharing" type="checkbox" id="trans4" value="Grab or Uber"/>
                 <label for="trans4">Grab 혹은 Uber</label>
               </li>
             </ul>
-          </fieldset>
-
-          <fieldset class="field">
-            <legend>여행스타일</legend>
+  
             <ul>
               <li>
-                <input
-                  name="travel-style"
-                  type="radio"
-                  id="nature"
-                  value="nature"
-                  required
-                />
+                <input name="travel-style" type="radio" id="nature" value="nature" required/>
                 <label for="nature">자연관광</label>
               </li>
               <li>
-                <input
-                  name="travel-style"
-                  type="radio"
-                  id="city"
-                  value="city"
-                />
+                <input name="travel-style" type="radio" id="city" value="city" />
                 <label for="city">도시관광</label>
               </li>
-
               <li>
-                <input
-                  name="travel-style"
-                  type="radio"
-                  id="foodfighter"
-                  value="food"
-                />
+                <input name="travel-style" type="radio" id="foodfighter" value="food"/>
                 <label for="foodfighter">식도락</label>
               </li>
               <li>
-                <input
-                  name="travel-style"
-                  type="radio"
-                  id="luxury"
-                  value="luxury"
-                />
+                <input name="travel-style" type="radio" id="luxury" value="luxury"/>
                 <label for="luxury">럭셔리</label>
               </li>
               <li>
-                <input
-                  name="travel-style"
-                  type="radio"
-                  id="cost-sensitive"
-                  value="cost-sensitive"
-                />
+                <input name="travel-style" type="radio" id="cost-sensitive" value="cost-sensitive"/>
                 <label for="cost-sensitive">가성비</label>
               </li>
               <li>
-                <input
-                  name="travel-style"
-                  type="radio"
-                  id="with-child"
-                  value="with child"
-                />
+                <input name="travel-style" type="radio" id="with-child" value="with child"/>
                 <label for="with-child">어린이 동반</label>
               </li>
             </ul>
-          </fieldset>
-
-          <fieldset class="trip-duration">
-            <legend>여행 기간</legend>
-            <div>
-              <label for="departure">출발일</label>
-              <input
-                type="datetime-local"
-                id="departure"
-                name="departure"
-                required
-              />
+  
+            <div class="travel-duration">
+              <label for="departure">출발일
+                <input type="date" id="departure" name="departure" required/>
+              </label>
+              <label for="arrival">도착일
+                <input type="date" id="arrival" name="arrival" required/>
+              </label>
             </div>
-            <div>
-              <label for="arrival">도착일</label>
-              <input
-                type="datetime-local"
-                id="arrival"
-                name="arrival"
-                required
-              />
-            </div>
-          </fieldset>
-
-          <fieldset class="other-requirement">
-            <legend>기타</legend>
-            <div>
-              <label for="input-num">인원</label>
-              <input type="number" id="input-num" name="num-people" required />
-              명
-            </div>
-
-            <div>
-              <label for="budget">1인당 여행비</label>
-              <input type="number" id="budget" name="budget" required /> 원
+  
+            <div class="people-budget">
+              <label for="input-num">인원
+                <input type="number" id="input-num" name="num-people" required/> 명
+              </label>
+              <label for="budget">1인당 여행비
+                <input type="number" id="budget" name="budget" step="100000" required/> &#8361;
+              </label>
             </div>
           </fieldset>
 
           <div class="main-buttons">
-            <button class="submit-button" type="submit">전송</button>
             <button class="reset-button" type="reset">초기화</button>
+            <button class="submit-button" type="submit">전송</button>
           </div>
         </form>
+        <!-- /form -->
       </div>
     </main>
 
-    <footer>
-      <p>Copyright 2023. Bundle trip planner by chat All rights reserved.</p>
+    <footer class="footer">
+      <p>Copyright 2023. Bundle Trip Planner by Chat All rights reserved.</p>
     </footer>
-
+    <!-- javascript -->
     <script src="../js/main.js"></script>
   </body>
 </html>

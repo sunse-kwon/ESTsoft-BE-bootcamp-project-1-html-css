@@ -1,4 +1,4 @@
-# convert bundled datset to json style dictionary to be used as an input for chatGPT. 
+# ChatGPT의 input으로 넣기 위해 번들화 된 리스트형태의 데이터셋을 딕셔너리 형태로 바꿔주는 함수 
 def genRef(data):
     result = dict()
     for i, bundle in enumerate(data):

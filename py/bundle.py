@@ -1,5 +1,6 @@
 import numpy as np
 
+# TOURISM.csv 파일을 bundle로 변환해주기 위한 함수
 def bundling(data):
     # Set maximum time spent and distance for a bundle
     MAX_TIME_SPENT = 300 # in minute
@@ -13,7 +14,7 @@ def bundling(data):
     MAX_ATTRACTION = 5
     MIN_ATTRACTION = 2
 
-    #  create a list of Attractions
+    # Create a list of Attractions
     attractions = []
     for row in data:
         id = int(row[0])
