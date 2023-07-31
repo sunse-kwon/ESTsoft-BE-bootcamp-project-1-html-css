@@ -2,7 +2,7 @@
 function getAuthUser() {
     const token = localStorage.getItem('token'); // Get the JWT token from localStorage
 
-    axios.get('http://www.bundletripbychat.com/validate-jwt/', {
+    axios.get('http://api.bundletripbychat.com/validate-jwt/', {
         headers: {
             Authorization: `Bearer ${token}`, // Add the token to the request headers
         },

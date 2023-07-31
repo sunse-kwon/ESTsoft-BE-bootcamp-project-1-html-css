@@ -9,7 +9,7 @@ const loginForm = document.getElementById('loginForm');
       const userPw = formData.get('userPw');
 
       // Make API call using Axios
-      axios.post('http://www.bundletripbychat.com/user/login/', {
+      axios.post('http://api.bundletripbychat.com/user/login/', {
         email: userEmail,
         password: userPw,
       })

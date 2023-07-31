@@ -22,7 +22,7 @@ const signinForm = document.getElementById('signinForm');
       const userName = formData.get('userName');
 
       // Make API call using Axios
-      axios.post('http://www.bundletripbychat.com/user/register/', {
+      axios.post('http://api.bundletripbychat.com/user/register/', {
         email: userEmail,
         password: userPw,
         name: userName,
