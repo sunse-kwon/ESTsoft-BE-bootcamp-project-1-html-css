@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+    <!-- Axios via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/forms.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1></h1>
+      <div class="header-left-section">
+        <img class="icon" src="../img/world-tour-icon.svg"/>
+        <a class="icon-text" href="../index.html">Bundle Trip Planner by Chat</a>
+      </div>
+      <div class="header-m-r-section">
+        <div class="header-middle-section">
+          <a href="../html/login.html">로그인</a>
+          <a href="../html/signin.html">회원가입</a>
+          <button type="button">로그아웃</button>
+          <a href="../html/main.html">사용자정보 입력</a>
+        </div>
+        <div class="header-right-section">
+          <a href="../html/attractions.html">여행지 상세정보</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- main -->
+    <main class="form-main">
+      <div class="form-container">
+        <h2 class="title">회원가입</h2>
+
+        <p class="description">
+          원활한 서비스를 이용을 위해 회원가입을 해주세요
+        </p>
+
+        <form class="signin" id="signinForm" method="post">
+          <div>
+            <label class="label-width" for="email1">Email</label>
+            <input type="email" id="email1" name="userEmail" />
+          </div>
+
+          <div>
+            <label class="label-width" for="password">Password</label>
+            <input type="password" id="password" name="userPw" />
+          </div>
+
+          <div>
+            <label class="label-width" for="repeat-password">Repeat</label>
+            <input type="password" id="repeat-password" name="userPwVal" />
+          </div>
+
+
+          <div>
+            <label class="label-width" for="name">Name</label>
+            <input type="text" id="name" name="userName" />
+          </div>
+
+          <button class="signin-button" type="submit" onclick="return validatePassword()">회원가입</button>
+        </form>
+      </div>
+    </main>
+    <!-- //main -->
+
+    <!-- footer -->
+    <p class="footer">Copyright 2023. peper All rights reserved.</p>
+    <!-- //footer -->
+
+    <!-- javascript -->
+    <script src="../js/signin.js"></script>
+  </body>
+</html>

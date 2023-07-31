@@ -6,16 +6,16 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 92vh;
+    height: 96vh;
 }
 
 .main-container {
     display: grid;
     width: 600px;
-    height: 600px;
+    height: 540px;
     margin: 90px 0 0 0;
     padding: 20px;
-    background-color:#eeeeee;
+    background-color: #eeeeee;
     border-radius: 20px;
     font-family: 'NanumGothic-Regular', sans-serif;
 }
@@ -59,7 +59,7 @@ ul {
     justify-content: space-evenly;
 }
 
-#input-num, 
+#input-num,
 #budget {
     text-align: right;
 }
@@ -73,8 +73,8 @@ ul {
 .submit-button {
     width: 45%;
     height: 40px;
-    background-color:#548fbc;
-    color:#FFFFFF;
+    background-color: #548fbc;
+    color: #FFFFFF;
     border-width: 0;
     border-radius: 4px;
     font: inherit;
@@ -85,8 +85,8 @@ ul {
 .reset-button {
     width: 45%;
     height: 40px;
-    background-color:#dc9b75;
-    color:#FFFFFF;
+    background-color: #dc9b75;
+    color: #FFFFFF;
     border-width: 0;
     border-radius: 4px;
     font: inherit;
@@ -95,15 +95,15 @@ ul {
 }
 
 .submit-button:hover {
-    color:#548fbc;
-    background-color:#FFFFFF;
+    color: #548fbc;
+    background-color: #FFFFFF;
     font-family: 'NanumGothic-Bold', sans-serif;
     font-size: large;
 }
 
 .reset-button:hover {
-    color:#dc9b75;
-    background-color:#FFFFFF;
+    color: #dc9b75;
+    background-color: #FFFFFF;
     font-family: 'NanumGothic-Bold', sans-serif;
     font-size: large;
 }
@@ -111,26 +111,9 @@ ul {
 /* responsive style for iphone 12 Pro */
 @media (max-width: 390px) {
     .main-main {
-        height:100vh;
+        height: 100vh;
     }
-    .main-container {
-        width: 110vw;
-        font-size:xx-small;
-        margin: none;
-        background-color: none;
-        height: 500px;
-    }
-    .main-container>h2,
-    .main-container>p {
-        padding-bottom: 20px;
-    }
-}
 
-/* responsive style for Samsung Galuxy S20 Ultra */
-  @media (min-width: 391px) and (max-width: 412px) {
-    .main-main {
-        height:100vh;
-    }
     .main-container {
         width: 110vw;
         font-size: xx-small;
@@ -138,6 +121,27 @@ ul {
         background-color: none;
         height: 500px;
     }
+
+    .main-container>h2,
+    .main-container>p {
+        padding-bottom: 20px;
+    }
+}
+
+/* responsive style for Samsung Galuxy S20 Ultra */
+@media (min-width: 391px) and (max-width: 412px) {
+    .main-main {
+        height: 100vh;
+    }
+
+    .main-container {
+        width: 110vw;
+        font-size: xx-small;
+        margin: none;
+        background-color: none;
+        height: 500px;
+    }
+
     .main-container>h2,
     .main-container>p {
         padding-bottom: 20px;

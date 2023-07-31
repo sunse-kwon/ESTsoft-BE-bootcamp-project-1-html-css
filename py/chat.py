@@ -6,14 +6,19 @@ import json
 import pandas as pd
 from pyodide.http import open_url
 from pyodide.ffi import create_proxy
-from js import document, sessionStorage, JSON
+from js import document, sessionStorage, localStorage, JSON
 
 
 # openAI API를 가져옴
 baseurl = sessionStorage.getItem('baseURL')
 
+
 # TOURISM.csv url 가져옴
 url = sessionStorage.getItem('rawURL')
+
+# jwt token 가져옴
+token = localStorage.getItem('token')
+
 
 # pandas 패키지로 csv 파일 읽어옴
 rawData = pd.read_csv(open_url(url), sep=',', encoding='unicode_escape')
@@ -25,7 +30,7 @@ rawData["EXPECTED_TIME_SPENT"] = 60
 rawData = rawData.loc[:, ["OBJECTID", 'LATITUDE', 'LONGTITUDE', "EXPECTED_TIME_SPENT",
                           "PAGETITLE", "OVERVIEW", "IMAGE_PATH", "ADDRESS", "OPENING_HO"]]
 
-#bundling 알고리즘에 넣어주기 위해 pandas dataframe 을 numpy array로 변환
+# bundling 알고리즘에 넣어주기 위해 pandas dataframe 을 numpy array로 변환
 new_data = rawData.values
 
 # 번들링 알고리즘을 사용하여 위에 데이터를 번들로 묶어준 데이터셋으로 변환. bundle.py 에서 함수를 import 함.
@@ -83,13 +88,16 @@ data = [{
 
 # DOM을 활용하여 요소들을 선택하여 변수로 할당
 inputChat = document.querySelector(".textbox")
-buttonChat = document.querySelector("button")
+buttonChat = document.querySelector("#button")
 chatList = document.querySelector("ul")
+
 
 # 화면에 뿌려줄 데이터, 질문들
 questionData = []
 
 # 화면에 질문 그려주는 함수
+
+
 def printQuestion():
     li = document.createElement("li")
     li.classList.add("question")
@@ -99,6 +107,8 @@ def printQuestion():
     questionData.clear()
 
 # 화면에 답변 그려주는 함수
+
+
 def printAnswer(answer):
     answer = answer.split("\n\n")
     li = document.createElement("li")
@@ -114,7 +124,8 @@ def printAnswer(answer):
         li.append(container)
     chatList.appendChild(li)
 
-# AddEventListener 실행을 위한 콜백함수
+
+# AddEventListener 실행을 위한 콜백함수 POST
 def eventPushData(e):
     e.preventDefault()
     userInputData = inputChat.value
@@ -128,14 +139,18 @@ def eventPushData(e):
     printQuestion()
     asyncio.ensure_future(main())
 
+
 # 버튼을 클릭하면 이벤트 활성화되어 콜백함수 실행
 eventPush = create_proxy(eventPushData)
 buttonChat.addEventListener("click", eventPush)
 
 # ChatGPT API 통신을 위한 함수
+
+
 async def main():
-    headers = {"Content-type": "application/json"}
+    headers = {"Content-type": "application/json",
+               "Authorization": f'Bearer {token}', }
     body = json.dumps(data)
-    response = await request(f"{baseurl}/", body=body, method="POST", headers=headers)
+    response = await request(f"{baseurl}", body=body, method="POST", headers=headers)
     res = await response.json()
-    printAnswer(res["choices"][0]["message"]["content"])
+    printAnswer(res)

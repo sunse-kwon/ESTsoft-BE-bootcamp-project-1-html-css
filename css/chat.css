@@ -1,23 +1,26 @@
 .chat-main {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     background-image: url('../img/main.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 92vh;
+    height: 96vh;
     padding-top: 100px;
 }
 
 .chat-info {
-    color:#ffffff;
+    color: #ffffff;
     font-family: 'NanumGothic-Bold', sans-serif;
     font-size: x-large;
-} 
+    margin-bottom: 20px;
+}
 
 .chat-wrap {
+    height: 500px;
+    width: 460px;
     padding: 30px;
     border-radius: 15px;
     border: 1px solid #eeeeee;
@@ -35,7 +38,7 @@ ul {
     display: flex;
     justify-content: flex-start;
     font-family: 'NanumGothic-Bold', sans-serif;
-    color:#FA8072;
+    color: #FA8072;
     font-weight: 700;
     margin-bottom: 20px;
 }
@@ -44,26 +47,27 @@ ul {
     display: flex;
     justify-content: flex-end;
     font-family: 'NanumGothic-Bold', sans-serif;
-    color:#4169e1;
+    color: #4169e1;
     font-weight: 700;
     padding-bottom: 10px;
 }
 
 .divQuestion {
     border-radius: 0 20px 20px 20px;
-    background-color:#ffffff;
+    background-color: #ffffff;
     padding: 5px 10px;
 }
 
 .divAnswer {
     border-radius: 20px 20px 0 20px;
     float: right;
-    background-color:#ffffff;
+    background-color: #ffffff;
     padding: 5px 10px;
 }
 
 .chat-screen {
-    height: 600px;
+    height: 400px;
+    width: 460px;
     overflow-y: scroll;
     border-radius: 5px;
     background-color: #eeeeee;
@@ -71,7 +75,7 @@ ul {
 }
 
 .chat-form {
-    background-color:#dfdfdf;
+    background-color: #dfdfdf;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -83,7 +87,7 @@ ul {
 
 .chat-item {
     width: 370px;
-    background-color:#dfdfdf;
+    background-color: #dfdfdf;
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
@@ -91,7 +95,7 @@ ul {
 
 .textbox {
     border-radius: 5px;
-    width: 400px;
+    width: 300px;
     height: 45px;
     font-weight: 700;
     border: none;
@@ -113,20 +117,25 @@ ul {
         width: 100vw;
         justify-content: space-around;
     }
+
     .chat-screen {
         height: 300px;
     }
+
     .chat-info {
         font-size: small;
         margin: 0 20px 0 20px;
     }
+
     .chat-form>button {
         font-size: small;
         font-weight: 400;
     }
+
     .textbox {
         width: 200px;
     }
+
     .chat-item {
         width: 200px;
     }
@@ -138,21 +147,26 @@ ul {
         height: 95vh;
         width: 100vw;
         justify-content: space-around;
-        }
+    }
+
     .chat-screen {
         height: 300px;
     }
+
     .chat-info {
         font-size: small;
         margin: 0 20px 0 20px;
     }
+
     .chat-form>button {
         font-size: small;
         font-weight: 400;
     }
+
     .textbox {
         width: 200px;
     }
+
     .chat-item {
         width: 200px;
     }

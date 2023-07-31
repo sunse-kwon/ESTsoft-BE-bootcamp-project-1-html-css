@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bundle Trip Planner by Chat</title>
+    <!-- Axios via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- css -->
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/main.css" />
   </head>
+  
 
-  <body>
+  <body onload="getAuthUser()">
     <header class="header">
       <h1></h1>
       <div class="header-left-section">
@@ -19,6 +22,9 @@
       </div>
       <div class="header-m-r-section">
         <div class="header-middle-section">
+          <a href="../html/login.html">로그인</a>
+          <a href="../html/signin.html">회원가입</a>
+          <button type="button">로그아웃</button>
           <a href="../html/main.html">사용자정보 입력</a>
         </div>
         <div class="header-right-section">

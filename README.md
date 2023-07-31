@@ -124,21 +124,21 @@
 
 ### 페이지 디자인
 - index.html
-![index](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/a21b33bb-26ba-4a19-b517-00c081b08979)
+![index](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/89c11ef4-9c5f-48a2-9f3c-0e23b2d4c4b6)
 
 - main.html
-![main](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/e0537742-460d-41ec-93ed-3fa5affcee46)
+![main](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/bd08f485-04d7-4a97-9b7f-843d6e4a5a17)
 
 - chat.html
-![chat](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/cfab5f4c-1f72-4791-8f73-2dfdb3100458)
+![chat](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/7d4fde9d-64dc-415b-8837-b73d5a9aad8f)
 
 - attractions.html
-![attraction](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/3c00f147-b1b3-4539-8e2f-d00ff26e2af4)
+![attractions](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/79f752b7-bc54-4fea-94f1-5e433c97b535)
 
 ### chat.html 페이지 사용 예시 
-![input](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/169de3a9-5937-4c88-8597-379762e4254d)
+![chatinput](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/1d1dfb65-93ef-4343-b331-af2604da603d)
 
-![output](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/c998bad9-74cd-4c2b-b1d7-c09809f5df3b)
+![chatoutput](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/febf574d-6287-4f60-83f1-7cd6dba9ec6c)
 
 ### Reference
 - data source: TOURRISM.csv dataset is originally aquired from https://data.gov.sg/dataset/tourist-attractions and then converted to csv format. 
