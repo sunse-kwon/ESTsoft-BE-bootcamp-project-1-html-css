@@ -5,13 +5,16 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Bundle Trip Planner by Chat</title>
+      <!-- Axios via CDN -->
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
       <!-- css -->
       <link rel="stylesheet" href="./css/common.css" />
       <link rel="stylesheet" href="./css/index.css" />
   </head>
 
-  <body>
-    <header class="header">
+  <body onload="dynamicHeader()">
+    <header></header>
+    <!-- <header class="header">
       <h1></h1>
       <div class="header-left-section">
         <img class="icon" src="./img/world-tour-icon.svg"/>
@@ -28,7 +31,7 @@
           <a href="./html/attractions.html">여행지 상세정보</a>
         </div>
       </div>
-    </header>
+    </header> -->
     
     <main class="index-main">
       <div class="intro-text">
@@ -46,5 +49,6 @@
     </footer>
     <!-- javascript -->
     <script src="./js/url.js"></script>
+    <script src="./js/common.js"></script>
   </body>
 </html>
