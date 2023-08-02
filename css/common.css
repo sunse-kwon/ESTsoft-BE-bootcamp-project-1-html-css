@@ -29,17 +29,17 @@ button:enabled {
 @font-face {
 	font-family: 'NanumGothic-Regular';
 	src: url('./font/NanumGothic-Regular.ttf') format('woff2');
-  }
+}
 
-  @font-face {
+@font-face {
 	font-family: 'NanumGothic-Bold';
 	src: url('./font/NanumGothic-Bold.ttf') format('woff2');
-  }
+}
 
 @font-face {
 	font-family: 'NanumGothic-ExtraBold';
 	src: url('./font/NanumGothic-ExtraBold.ttf') format('woff2');
-  }
+}
 
 /* header */
 .header {
@@ -69,15 +69,16 @@ button:enabled {
 }
 
 .header-left-section {
-	box-sizing:border-box;
+	box-sizing: border-box;
 	padding-left: 10px;
 	padding-right: 10px;
 }
 
 .header-middle-section,
+.header-empty-section,
 .header-right-section {
 	padding: 26px;
-	box-sizing:border-box;
+	box-sizing: border-box;
 }
 
 .icon-text {
@@ -85,7 +86,7 @@ button:enabled {
 }
 
 .icon {
-	width:2rem;
+	width: 2rem;
 	height: 2rem;
 	object-fit: cover;
 }
@@ -93,12 +94,13 @@ button:enabled {
 .header-left-section:hover,
 .icon-container:hover,
 .header-middle-section:hover,
+.header-empty-section:hover,
 .header-right-section:hover {
-    background-color: rgb(235, 235, 235);
+	background-color: rgb(235, 235, 235);
 }
 
 h1 {
-	display:none;
+	display: none;
 }
 
 /* body */
@@ -120,36 +122,40 @@ body {
 
 /* responsive style for iphone 12 Pro */
 @media (max-width: 390px) {
-    .header {
-      width: 109vw;
-      font-size:xx-small;
-      justify-content:left;
-    }
+	.header {
+		width: 109vw;
+		font-size: xx-small;
+		justify-content: left;
+	}
+
 	.header-middle-section,
 	.header-right-section {
-	padding: none;
-	box-sizing:border-box;
+		padding: none;
+		box-sizing: border-box;
 	}
+
 	.footer {
 		font-size: xx-small;
 		padding: none;
 	}
-  }
+}
 
 /* responsive style for Samsung Galuxy S20 Ultra */
-  @media (min-width: 391px) and (max-width: 412px) {
-    .header {
-	width: 110vw;
-    font-size:x-small;
-    justify-content:left;
-    }
+@media (min-width: 391px) and (max-width: 412px) {
+	.header {
+		width: 110vw;
+		font-size: x-small;
+		justify-content: left;
+	}
+
 	.header-middle-section,
 	.header-right-section {
-	padding: none;
-	box-sizing:border-box;
+		padding: none;
+		box-sizing: border-box;
 	}
+
 	.footer {
 		font-size: xx-small;
 		padding: none;
 	}
-  }
+}
