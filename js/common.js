@@ -10,7 +10,7 @@ function dynamicHeaderIdx() {
         // handle success
         const header = document.querySelector('.header-empty-section')
         header.innerHTML = `
-            <button type="button">로그아웃</button>
+            <a href="">로그아웃</a>
             `;
         console.log(response);
     })
@@ -43,7 +43,7 @@ function dynamicHeader() {
         // handle success
         const header = document.querySelector('.header-empty-section')
         header.innerHTML = `
-            <button type="button">로그아웃</button>
+            <a href="">로그아웃</a>
             `;
         console.log(response);
     })
