@@ -5,7 +5,7 @@
 - openAI 의 Chat Completions API를 활용하여 챗봇을 구현.
 - HTML, CSS, Javascript, Pyscript 를 활용하여 웹서비스 구축.
 - Bundling algorithm을 활용하여 raw dataset 안의 여행지들을 가까운 관광지끼리 묶음.
-- User input data와 bundle data를 chatGPT의 input 으로 학습.
+- User input data와 bundle data를 ChatGPT의 input 으로 학습.
 - ChatGPT의 output 신뢰성을 높이기 위한 prompt engineering 테크닉을 사용(1. setting rules, guidelines and example. 2. use "Let's think step by step" clause.)
 - Raw dataset의 관광지들을 Card로 만들어 별도 페이지에 출력.
 - 모바일 환경을 고려.
