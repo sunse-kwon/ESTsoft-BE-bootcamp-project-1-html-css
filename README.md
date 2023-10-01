@@ -122,7 +122,7 @@
    └─ utils.py
 ```
 
-### 페이지 디자인
+### 페이지 구현
 - index.html
 ![index](https://github.com/sunse-kwon/ormi-dev-project-1/assets/94329884/89c11ef4-9c5f-48a2-9f3c-0e23b2d4c4b6)
 
