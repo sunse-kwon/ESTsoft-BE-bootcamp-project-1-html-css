@@ -17,7 +17,7 @@
 - main 페이지: 개인화된 답변을 주기위해 여행에 필요한 정보 입력, 이를 chat 페이지에 전달.
 - chat 페이지: 유저 input과 관광지 번들을 활용하여 ChatGPT와 API 통신, ChatGPT가 개인화된 싱가포르 여행계획 생성.
 - attraction 페이지: raw dataset에 있는 총 107개 관광지 정보를 카드형태로 출력.
-- register 페이지: 회원가입 기능
+- signin 페이지: 회원가입 기능
 - login 페이지: 로그인 기능
 
 ### 개발환경
