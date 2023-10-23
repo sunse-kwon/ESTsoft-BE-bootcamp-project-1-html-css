@@ -1,4 +1,4 @@
-# ESTsoft-FE-bootcamp-project-1-html-css
+# ESTsoft-BE-bootcamp-project-1-html-css
 ## 주제 : ChatGPT를 활용한 싱가포르 여행계획 자동생성 플래너 챗봇 - Frontend
 
 ### 목표
