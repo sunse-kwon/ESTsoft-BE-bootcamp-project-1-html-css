@@ -148,4 +148,4 @@
 
 ### Reference
 - Data Source: TOURRISM.csv 은 싱가포르 공공데이터에서 가져왔으며, CSV 형식으로 변환하였습니다. https://data.gov.sg/dataset/tourist-attractions 
-- Prompt Engineering: openAI의 techniques to improve reliability 문서를 참조하였습니다. https://github.com/openai/openai-cookbook/blob/main/techniques_to_improve_reliability.md
+- Prompt Engineering: openAI의 techniques to improve reliability 문서를 참조하였습니다. https://github.com/openai/openai-cookbook/blob/main/articles/techniques_to_improve_reliability.md
